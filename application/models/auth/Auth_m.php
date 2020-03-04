@@ -7,8 +7,7 @@ class Auth_m extends CI_Model
     {
         $this->db->select('*');
         $this->db->from('user');
-        $this->db->where('username', htmlspecialchars($post['username']));
-        $this->db->where('password', htmlspecialchars(sha1($post['password'])));
+        $this->db->where('username', htmlspecialchars($post['username'], true));
         $query = $this->db->get();
         return $query;
     }

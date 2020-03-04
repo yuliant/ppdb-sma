@@ -7,12 +7,11 @@ class Dashboard extends CI_Controller
 	{
 		parent::__construct();
 		check_not_login();
-		check_user();
 	}
 
 	public function index()
 	{
 		$data['tittle'] = "Dashboard";
-		$this->template->load('template', 'dashboard/index', $data);
+		$this->template->load('temp_dashboard', 'user/dashboard/index', $data);
 	}
 }
