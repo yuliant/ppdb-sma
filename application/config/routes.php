@@ -56,8 +56,13 @@ $route['translate_uri_dashes'] = FALSE;
 //user
 //dashboard
 $route['dashboard'] = 'user/dashboard/index';
+$route['dashboard/biayadaftarulang'] = 'user/dashboard/biayadaftarulang';
+$route['dashboard/agenda'] = 'user/dashboard/agenda';
+$route['dashboard/hubungiadmin'] = 'user/dashboard/hubungiadmin';
 //daftar
 $route['daftar'] = 'user/daftar/index';
+$route['daftar/bayarformulir'] = 'user/daftar/bayarformulir';
+$route['daftar/editpendaftaran'] = 'user/daftar/editpendaftaran';
 //formulir
 $route['formulir'] = 'user/formulir/index';
 

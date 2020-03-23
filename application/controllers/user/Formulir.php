@@ -12,8 +12,7 @@ class Formulir extends CI_Controller
 
     public function index()
     {
-        $data['tittle'] = "Formulir";
-        $this->template->load('temp_dashboard', 'user/dashboard/index', $data);
+        echo "formulir";
     }
 }
 

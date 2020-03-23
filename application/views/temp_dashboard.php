@@ -29,7 +29,7 @@
                 </form>
                 <ul class="navbar-nav navbar-right">
                     <li class="dropdown"><a href="#" data-toggle="dropdown" class="nav-link dropdown-toggle nav-link-lg nav-link-user">
-                            <img alt="image" src="<?php echo base_url(); ?>assets/sources/img/<?php echo $this->fungsi->user_login()->image ?>" class="rounded-circle mr-1">
+                            <img alt="image" src="<?php echo base_url(); ?>assets/data/<?php echo $this->fungsi->user_login()->image ?>" class="rounded-circle mr-1">
                             <div class="d-sm-none d-lg-inline-block">Hi, <?php echo $this->fungsi->user_login()->username ?></div>
                         </a>
                         <div class="dropdown-menu dropdown-menu-right">
@@ -108,7 +108,7 @@
 
                             <div class="mt-4 mb-4 p-3 hide-sidebar-mini">
                                 <a href="#" class="btn btn-primary btn-lg btn-block btn-icon-split">
-                                    <i class="fas fa-cloud-download-alt"></i> Download Formulir
+                                    <i class="fas fa-cloud-download-alt"></i> Cetak Formulir
                                 </a>
                             </div>
 
@@ -163,6 +163,8 @@
     <script src="<?php echo base_url(); ?>assets/stisla/js/stisla.js"></script>
 
     <!-- JS Libraies -->
+    <!-- <script src="<?php echo base_url(); ?>assets/stisla/modules/chocolat/dist/js/jquery.chocolat.min.js"></script> -->
+    <!-- <script src="<?php echo base_url(); ?>assets/stisla/modules/jquery-ui/jquery-ui.min.js"></script> -->
 
     <!-- Page Specific JS File -->
 

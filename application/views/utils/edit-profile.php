@@ -18,7 +18,6 @@
 
                     <label>Nama Lengkap</label>
                     <div class="form-group">
-                        <input type="hidden" name="username" id="username" value="<?php echo $this->fungsi->user_login()->username; ?>">
                         <input type="text" name="nama" id="nama" class="form-control" value="<?php echo $this->fungsi->user_login()->nama; ?>">
                         <?php echo form_error('nama', '<small class="text-danger pl-3">', '</small>'); ?>
                     </div>
@@ -27,7 +26,7 @@
                     <div class="row">
                         <div class="col-sm-3">
                             <img src="
-                            <?php echo base_url('assets/sources/img/') .
+                            <?php echo base_url('assets/data/') .
                                 $this->fungsi->user_login()->image; ?>" class="img-thumbnail">
                         </div>
                         <div class="col-sm-9">

@@ -21,7 +21,7 @@
                 <div class="card-body">
                     <div class="author-box-left">
                         <img alt="image" src="<?php
-                                                echo base_url('assets/sources/img/') .
+                                                echo base_url('assets/data/') .
                                                     $this->fungsi->user_login()->image; ?>" class="author-box-picture">
                     </div>
                     <div class="author-box-details">

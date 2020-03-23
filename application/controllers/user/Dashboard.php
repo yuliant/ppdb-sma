@@ -14,4 +14,22 @@ class Dashboard extends CI_Controller
 		$data['tittle'] = "Dashboard";
 		$this->template->load('temp_dashboard', 'user/dashboard/index', $data);
 	}
+
+	public function biayadaftarulang()
+	{
+		$data['tittle'] = "Dashboard";
+		$this->template->load('temp_dashboard', 'user/dashboard/biayadaftarulang', $data);
+	}
+
+	public function agenda()
+	{
+		$data['tittle'] = "Dashboard";
+		$this->template->load('temp_dashboard', 'user/dashboard/agenda', $data);
+	}
+
+	public function hubungiadmin()
+	{
+		$data['tittle'] = "Dashboard";
+		$this->template->load('temp_dashboard', 'user/dashboard/hubungiadmin', $data);
+	}
 }

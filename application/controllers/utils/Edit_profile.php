@@ -21,7 +21,6 @@ class Edit_profile extends CI_Controller
         if ($this->form_validation->run() == false) {
             $this->template->load('temp_dashboard', 'utils/edit-profile', $data);
         } else {
-            $username = htmlspecialchars($this->input->post('username'), true);
             $nama = htmlspecialchars($this->input->post('nama'), true);
 
             // cek jika ada gambar
@@ -31,10 +30,10 @@ class Edit_profile extends CI_Controller
             if ($upload_image) {
                 $config['allowed_types'] = 'gif|jpg|png';
                 $config['max_size']      = '1048';
-                $config['upload_path'] = './assets/sources/img/' . $username;
+                $config['upload_path'] = './assets/data/' . $username;
 
-                if (!is_dir('./assets/sources/img/' . $username)) {
-                    mkdir('./assets/sources/img/' . $username, 0777, TRUE);
+                if (!is_dir('./assets/data/' . $username)) {
+                    mkdir('./assets/data/' . $username, 0777, TRUE);
                 }
 
                 $this->load->library('upload', $config);
@@ -42,7 +41,7 @@ class Edit_profile extends CI_Controller
                 if ($this->upload->do_upload('image')) {
                     $old_image = $this->fungsi->user_login()->image;
                     if ($old_image != 'default.jpg') {
-                        unlink(FCPATH . 'assets/sources/img/' . $old_image);
+                        unlink(FCPATH . 'assets/data/' . $old_image);
                     }
 
                     $new_image = $this->upload->data('file_name');
