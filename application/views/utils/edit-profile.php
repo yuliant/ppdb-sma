@@ -16,7 +16,7 @@
                 <div class="card-body">
                     <?php echo form_open_multipart('editprofil'); ?>
 
-                    <label>Nama Lengkap</label>
+                    <label>Nama Lengkap*</label>
                     <div class="form-group">
                         <input type="text" name="nama" id="nama" class="form-control" value="<?php echo $this->fungsi->user_login()->nama; ?>">
                         <?php echo form_error('nama', '<small class="text-danger pl-3">', '</small>'); ?>

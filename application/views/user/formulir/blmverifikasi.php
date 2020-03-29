@@ -13,11 +13,10 @@
                             <div class="empty-state-icon bg-danger">
                                 <i class="fas fa-times"></i>
                             </div>
-                            <h2>Pendaftaran anda ditolak</h2>
+                            <h2>Akun anda belum di verifikasi admin</h2>
                             <p class="lead">
-                                Mungkin ada kesalahan saat anda menginput data. Silahkan edit dengan menekan tombol "Edit Pendaftaran" atau hubungi admin melalui tombol "bantuan" dibawah ini.
+                                Silahkan daftar dengan menekan menu "Daftar" di pojok kiri. Bagi anda yang sudah mendaftar, silahkan tunggu sampai akun anda terverifikasi admin (maximal 1x24 jam)
                             </p>
-                            <a href="<?php echo base_url('daftar/editpendaftaran') ?>" class="btn btn-danger mt-4">Edit Pendaftaran</a>
                             <a href="#" data-toggle="modal" data-target="#logoutModal" class="mt-4 text-danger">Butuh bantuan?</a>
                         </div>
                     </div>

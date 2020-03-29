@@ -21,7 +21,7 @@ class Auth extends CI_Controller
         //message
         $this->form_validation->set_message('required', '%s masih kosong, silahkan diisi');
         if ($this->form_validation->run() == false) {
-            $data['tittle'] = "Login";
+            $data['tittle'] = "Login | PPDB Smagrisda";
             $this->load->view('auth/login', $data);
         } else {
             $this->_proses();
@@ -97,7 +97,7 @@ class Auth extends CI_Controller
         $this->form_validation->set_message('required', '%s masih kosong, silahkan diisi');
 
         if ($this->form_validation->run() == false) {
-            $data['tittle'] = "Registration";
+            $data['tittle'] = "Registration | PPDB Smagrisda";
             $this->load->view('auth/register', $data);
         } else {
             $data = [

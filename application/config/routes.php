@@ -53,6 +53,9 @@ $route['default_controller'] = 'auth';
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;
 
+//show
+$route['show/(:any)'] = 'show/index/$1';
+
 //user
 //dashboard
 $route['dashboard'] = 'user/dashboard/index';
@@ -65,6 +68,11 @@ $route['daftar/bayarformulir'] = 'user/daftar/bayarformulir';
 $route['daftar/editpendaftaran'] = 'user/daftar/editpendaftaran';
 //formulir
 $route['formulir'] = 'user/formulir/index';
+$route['formulir/dataortu'] = 'user/formulir/dataortu';
+$route['formulir/berkas'] = 'user/formulir/berkas';
+$route['formulir/editdatadiri'] = 'user/formulir/editdatadiri';
+$route['formulir/editdataortu'] = 'user/formulir/editdataortu';
+$route['formulir/editberkas'] = 'user/formulir/editberkas';
 
 //utils
 //profil

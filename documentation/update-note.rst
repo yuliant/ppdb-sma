@@ -3,6 +3,14 @@ UPDATE NOTE
 *******************
 
 *******************
+Version 0.1.2 (beta) 29 Mar 2020
+*******************
+* Perubahan pada database, silahkan import kembali
+* Menu formulir sudah dapat digunakan
+* Menggunakan token untuk menampilkan data diluar sistem dan qrcode nanti
+* Mengoptimalkan query
+
+*******************
 Version 0.1.1 (beta) 24 Mar 2020
 *******************
 * Perubahan pada database, silahkan import kembali

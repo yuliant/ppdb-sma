@@ -1,3 +1,6 @@
+<?php
+$user = $this->fungsi->user_login();
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -11,6 +14,12 @@
     <link rel="stylesheet" href="<?php echo base_url(); ?>assets/stisla/modules/fontawesome/css/all.min.css">
 
     <!-- CSS Libraries -->
+    <!-- <link rel="stylesheet" href="<?php echo base_url(); ?>assets/stisla/modules/bootstrap-daterangepicker/daterangepicker.css">
+    <link rel="stylesheet" href="<?php echo base_url(); ?>assets/stisla/modules/bootstrap-colorpicker/dist/css/bootstrap-colorpicker.min.css">
+    <link rel="stylesheet" href="<?php echo base_url(); ?>assets/stisla/modules/select2/dist/css/select2.min.css">
+    <link rel="stylesheet" href="<?php echo base_url(); ?>assets/stisla/modules/jquery-selectric/selectric.css">
+    <link rel="stylesheet" href="<?php echo base_url(); ?>assets/stisla/modules/bootstrap-timepicker/css/bootstrap-timepicker.min.css">
+    <link rel="stylesheet" href="<?php echo base_url(); ?>assets/stisla/modules/bootstrap-tagsinput/dist/bootstrap-tagsinput.css"> -->
 
     <!-- Template CSS -->
     <link rel="stylesheet" href="<?php echo base_url(); ?>assets/stisla/css/style.css">
@@ -29,8 +38,8 @@
                 </form>
                 <ul class="navbar-nav navbar-right">
                     <li class="dropdown"><a href="#" data-toggle="dropdown" class="nav-link dropdown-toggle nav-link-lg nav-link-user">
-                            <img alt="image" src="<?php echo base_url(); ?>assets/data/<?php echo $this->fungsi->user_login()->image ?>" class="rounded-circle mr-1">
-                            <div class="d-sm-none d-lg-inline-block">Hi, <?php echo $this->fungsi->user_login()->username ?></div>
+                            <img alt="image" src="<?php echo base_url(); ?>assets/data/<?php echo $user->image ?>" class="rounded-circle mr-1">
+                            <div class="d-sm-none d-lg-inline-block">Hi, <?php echo $user->username ?></div>
                         </a>
                         <div class="dropdown-menu dropdown-menu-right">
                             <a href="<?php echo base_url('profil'); ?>" class="dropdown-item has-icon">
@@ -56,7 +65,7 @@
                     </div>
                     <ul class="sidebar-menu">
                         <!-- user menu -->
-                        <?php if ($this->fungsi->user_login()->level == 1) { ?>
+                        <?php if ($user->level == 1) { ?>
                             <li class="menu-header">Menu</li>
                             <li <?php echo $this->uri->segment(1) == 'admindashboard' ? 'class="active"' : '' ?>>
                                 <a class="nav-link" href="<?php echo base_url('admindashboard') ?>">
@@ -68,7 +77,7 @@
 
 
                         <!-- user menu -->
-                        <?php if ($this->fungsi->user_login()->level == 2) { ?>
+                        <?php if ($user->level == 2) { ?>
                             <li class="menu-header">Menu</li>
 
                             <li <?php echo $this->uri->segment(1) == 'dashboard' ? 'class="active"' : '' ?>>
@@ -83,27 +92,10 @@
                                 </a>
                             </li>
 
-                            <li class="dropdown <?php
-                                                echo $this->uri->segment(1) == 'datadiri' ||
-                                                    $this->uri->segment(1) == 'dataortu' ||
-                                                    $this->uri->segment(1) == 'berkas' ? 'active' : '' ?>">
-                                <a href="" class="nav-link has-dropdown">
+                            <li <?php echo $this->uri->segment(1) == 'formulir' ? 'class="active"' : '' ?>>
+                                <a class="nav-link" href="<?php echo base_url('formulir') ?>">
                                     <i class="far fa-file-alt"></i> <span>Formulir</span>
                                 </a>
-                                <ul class="dropdown-menu">
-                                    <li <?php echo $this->uri->segment(1) == 'datadiri' ? 'class="active"' : '' ?>>
-                                        <a href="<?php echo base_url('datadiri') ?>">
-                                            <i class="fas fa-check-circle text-success mr-1"></i>
-                                            <span class="text-success">Data diri siswa</span>
-                                        </a>
-                                    </li>
-                                    <li <?php echo $this->uri->segment(1) == 'dataortu' ? 'class="active"' : '' ?>>
-                                        <a href="<?php echo base_url('dataortu') ?>">Data orang tua</a>
-                                    </li>
-                                    <li <?php echo $this->uri->segment(1) == 'berkas' ? 'class="active"' : '' ?>>
-                                        <a href="<?php echo base_url('berkas') ?>">Kelengkapan berkas</a>
-                                    </li>
-                                </ul>
                             </li>
 
                             <div class="mt-4 mb-4 p-3 hide-sidebar-mini">
@@ -167,6 +159,7 @@
     <!-- <script src="<?php echo base_url(); ?>assets/stisla/modules/jquery-ui/jquery-ui.min.js"></script> -->
 
     <!-- Page Specific JS File -->
+    <!-- <script src="<?php echo base_url(); ?>assets/stisla/js/page/forms-advanced-forms.js"></script> -->
 
     <!-- Template JS File -->
     <script src="<?php echo base_url(); ?>assets/stisla/js/scripts.js"></script>

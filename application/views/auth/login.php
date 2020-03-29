@@ -42,7 +42,8 @@
                             <div class="col-lg-5">
                                 <div class="p-5">
                                     <div class="text-center">
-                                        <h1 class="h4 text-gray-900 mb-4">Login</h1>
+                                        <h4 class="h4 text-gray-900">Login</h4>
+                                        <p class="text-gray-900 mb-4">PPDB Smagrisda</p>
                                     </div>
 
                                     <?php echo $this->session->flashdata('message'); ?>

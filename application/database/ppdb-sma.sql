@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Generation Time: Mar 23, 2020 at 11:47 PM
+-- Generation Time: Mar 28, 2020 at 11:47 PM
 -- Server version: 5.7.26
 -- PHP Version: 7.1.29
 
@@ -21,6 +21,129 @@ SET time_zone = "+00:00";
 --
 -- Database: `ppdb-sma`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `data_berkas`
+--
+
+DROP TABLE IF EXISTS `data_berkas`;
+CREATE TABLE IF NOT EXISTS `data_berkas` (
+  `id_data_berkas` int(11) NOT NULL AUTO_INCREMENT,
+  `id_user` int(11) NOT NULL,
+  `nilai_indo` varchar(3) NOT NULL,
+  `nilai_ing` varchar(3) NOT NULL,
+  `matematika` varchar(3) NOT NULL,
+  `ipa` varchar(3) NOT NULL,
+  `foto_ijasah_smp` varchar(255) NOT NULL,
+  `foto_shun` varchar(255) NOT NULL,
+  PRIMARY KEY (`id_data_berkas`)
+) ENGINE=MyISAM AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `data_berkas`
+--
+
+INSERT INTO `data_berkas` (`id_data_berkas`, `id_user`, `nilai_indo`, `nilai_ing`, `matematika`, `ipa`, `foto_ijasah_smp`, `foto_shun`) VALUES
+(1, 7, '90', '90', '90', '90', 'ade/e.png', 'ade/userinterface.jpg');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `data_diri_pribadi`
+--
+
+DROP TABLE IF EXISTS `data_diri_pribadi`;
+CREATE TABLE IF NOT EXISTS `data_diri_pribadi` (
+  `id_data_diri_pribadi` int(11) NOT NULL AUTO_INCREMENT,
+  `id_user` int(11) NOT NULL,
+  `username` varchar(12) NOT NULL,
+  `nama` varchar(40) NOT NULL,
+  `tempat_lahir` varchar(20) NOT NULL,
+  `tanggal_lahir` date NOT NULL,
+  `agama` varchar(10) NOT NULL,
+  `kelamin` char(1) NOT NULL,
+  `alamat` text NOT NULL,
+  `telp` varchar(16) NOT NULL,
+  PRIMARY KEY (`id_data_diri_pribadi`)
+) ENGINE=MyISAM AUTO_INCREMENT=11 DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `data_diri_pribadi`
+--
+
+INSERT INTO `data_diri_pribadi` (`id_data_diri_pribadi`, `id_user`, `username`, `nama`, `tempat_lahir`, `tanggal_lahir`, `agama`, `kelamin`, `alamat`, `telp`) VALUES
+(1, 7, 'ade', 'ADE TITIT TOTOT', 'JOMBANG', '2020-03-01', 'BUDDHA', 'P', 'KENDAL PECABEAN RT 03 RW 01 CANDI JOMBANG', '089695615257');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `data_diri_sekolah`
+--
+
+DROP TABLE IF EXISTS `data_diri_sekolah`;
+CREATE TABLE IF NOT EXISTS `data_diri_sekolah` (
+  `id_data_diri_sekolah` int(11) NOT NULL AUTO_INCREMENT,
+  `id_user` int(11) NOT NULL,
+  `asal_sekolah` varchar(40) NOT NULL,
+  `nisn` varchar(14) NOT NULL,
+  `tahun_lulus` year(4) NOT NULL,
+  `no_ijasah` varchar(10) NOT NULL,
+  PRIMARY KEY (`id_data_diri_sekolah`)
+) ENGINE=MyISAM AUTO_INCREMENT=6 DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `data_diri_sekolah`
+--
+
+INSERT INTO `data_diri_sekolah` (`id_data_diri_sekolah`, `id_user`, `asal_sekolah`, `nisn`, `tahun_lulus`, `no_ijasah`) VALUES
+(1, 7, 'SMPN 2 KAROBELAH', '1234567810', 2018, '1234567810');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `data_ortu`
+--
+
+DROP TABLE IF EXISTS `data_ortu`;
+CREATE TABLE IF NOT EXISTS `data_ortu` (
+  `id_data_ortu` int(11) NOT NULL AUTO_INCREMENT,
+  `id_user` int(11) NOT NULL,
+  `nama_ortu` varchar(40) NOT NULL,
+  `pekerjaan` varchar(25) NOT NULL,
+  `alamat_ortu` text NOT NULL,
+  `telp_ortu` varchar(16) NOT NULL,
+  PRIMARY KEY (`id_data_ortu`)
+) ENGINE=MyISAM AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `data_ortu`
+--
+
+INSERT INTO `data_ortu` (`id_data_ortu`, `id_user`, `nama_ortu`, `pekerjaan`, `alamat_ortu`, `telp_ortu`) VALUES
+(1, 7, 'JI', 'MANAGER', 'KENDAL PECABEAN RT 03 RW 01 CANDI', '089695615250');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `data_qrcode`
+--
+
+DROP TABLE IF EXISTS `data_qrcode`;
+CREATE TABLE IF NOT EXISTS `data_qrcode` (
+  `id_data_qrcode` int(11) NOT NULL AUTO_INCREMENT,
+  `id_user` int(11) NOT NULL,
+  `token` varchar(128) NOT NULL,
+  PRIMARY KEY (`id_data_qrcode`)
+) ENGINE=MyISAM AUTO_INCREMENT=11 DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `data_qrcode`
+--
+
+INSERT INTO `data_qrcode` (`id_data_qrcode`, `id_user`, `token`) VALUES
+(1, 7, 'pJnDFDiBLt');
 
 -- --------------------------------------------------------
 
@@ -63,16 +186,16 @@ CREATE TABLE IF NOT EXISTS `user_daftar` (
   `telp` varchar(16) NOT NULL,
   `email` varchar(50) DEFAULT NULL,
   `foto_bukti_transfer` varchar(255) NOT NULL,
-  `status` int(1) NOT NULL,
+  `status` int(1) NOT NULL COMMENT '1: dikonfirmasi, 2: ditolak',
   PRIMARY KEY (`id_user_daftar`)
-) ENGINE=MyISAM AUTO_INCREMENT=8 DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM AUTO_INCREMENT=12 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `user_daftar`
 --
 
 INSERT INTO `user_daftar` (`id_user_daftar`, `id_user`, `telp`, `email`, `foto_bukti_transfer`, `status`) VALUES
-(7, 7, '089695615257', 'ade@gmail.com', 'ade/anime2.jpg', 0);
+(1, 7, '089695615257', 'masrizal04@gmail.com', 'ade/anime21.jpg', 1);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

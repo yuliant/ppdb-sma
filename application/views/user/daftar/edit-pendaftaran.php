@@ -20,12 +20,12 @@
 
                     <label>Nama Lengkap</label>
                     <div class="form-group">
-                        <input type="text" name="nama" id="nama" class="form-control" value="<?php echo $this->fungsi->user_login()->nama; ?>" readonly>
+                        <input type="text" name="nama" id="nama" class="form-control" value="<?php echo $user->nama; ?>" readonly>
                     </div>
 
-                    <label>No. Telp / WA</label>
+                    <label>No. Telp / WA*</label>
                     <div class="form-group">
-                        <input type="number" name="telp" id="telp" class="form-control" value="<?php echo $user_daftar->telp; ?>">
+                        <input type="number" name="telp" id="telp" class="form-control" value="<?php echo $user_daftar->telp; ?>" required>
                         <?php echo form_error('telp', '<small class="text-danger pl-3">', '</small>'); ?>
                     </div>
 
@@ -35,7 +35,7 @@
                         <?php echo form_error('email', '<small class="text-danger pl-3">', '</small>'); ?>
                     </div>
 
-                    <label>Bukti Transfer Pembayaran</label>
+                    <label>Bukti Transfer Pembayaran*</label>
                     <div class="row">
                         <div class="col-sm-3">
                             <a href="<?php echo base_url('assets/data/') . $user_daftar->foto_bukti_transfer; ?>">
@@ -50,6 +50,7 @@
                             </div>
                         </div>
                     </div>
+
                     <div class="card-footer text-right">
                         <button class="btn btn-primary mr-1" type="submit">Save</button>
                         <a href="<?php echo base_url('daftar') ?>" class="btn btn-light">Cancel</a>

@@ -20,12 +20,12 @@
 
                     <label>Nama Lengkap</label>
                     <div class="form-group">
-                        <input type="text" name="nama" id="nama" class="form-control" value="<?php echo $this->fungsi->user_login()->nama; ?>" readonly>
+                        <input type="text" name="nama" id="nama" class="form-control" value="<?php echo $user->nama; ?>" readonly>
                     </div>
 
-                    <label>No. Telp / WA</label>
+                    <label>No. Telp / WA*</label>
                     <div class="form-group">
-                        <input type="number" name="telp" id="telp" class="form-control" value="<?php echo set_value('telp'); ?>">
+                        <input type="number" name="telp" id="telp" class="form-control" value="<?php echo set_value('telp'); ?>" required>
                         <?php echo form_error('telp', '<small class="text-danger pl-3">', '</small>'); ?>
                     </div>
 
@@ -35,7 +35,7 @@
                         <?php echo form_error('email', '<small class="text-danger pl-3">', '</small>'); ?>
                     </div>
 
-                    <label>Bukti Transfer Pembayaran</label>
+                    <label>Bukti Transfer Pembayaran*</label>
                     <div class="form-group col-sm-9">
                         <div class="custom-file">
                             <input type="file" class="custom-file-input" id="image" name="image">

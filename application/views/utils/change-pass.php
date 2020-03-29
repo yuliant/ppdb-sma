@@ -19,21 +19,21 @@
             <div class="card">
                 <div class="card-body">
                     <form action="<?php echo base_url('changepass') ?>" method="post">
-                        <label>Password Terdahulu</label>
+                        <label>Password Terdahulu*</label>
                         <div class="form-group">
-                            <input type="password" name="current_pasword" id="current_pasword" class="form-control">
+                            <input type="password" name="current_pasword" id="current_pasword" class="form-control" required>
                             <?php echo form_error('current_pasword', '<small class="text-danger pl-3">', '</small>'); ?>
                         </div>
 
-                        <label>Password Baru</label>
+                        <label>Password Baru*</label>
                         <div class="form-group">
-                            <input type="password" name="new_pasword1" id="new_pasword1" class="form-control">
+                            <input type="password" name="new_pasword1" id="new_pasword1" class="form-control" required>
                             <?php echo form_error('new_pasword1', '<small class="text-danger pl-3">', '</small>'); ?>
                         </div>
 
-                        <label>Konfirmasi Password Baru</label>
+                        <label>Konfirmasi Password Baru*</label>
                         <div class="form-group">
-                            <input type="password" name="new_pasword2" id="new_pasword2" class="form-control">
+                            <input type="password" name="new_pasword2" id="new_pasword2" class="form-control" required>
                             <?php echo form_error('new_pasword2', '<small class="text-danger pl-3">', '</small>'); ?>
                         </div>
 
