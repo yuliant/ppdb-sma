@@ -14,12 +14,6 @@ $user = $this->fungsi->user_login();
     <link rel="stylesheet" href="<?php echo base_url(); ?>assets/stisla/modules/fontawesome/css/all.min.css">
 
     <!-- CSS Libraries -->
-    <!-- <link rel="stylesheet" href="<?php echo base_url(); ?>assets/stisla/modules/bootstrap-daterangepicker/daterangepicker.css">
-    <link rel="stylesheet" href="<?php echo base_url(); ?>assets/stisla/modules/bootstrap-colorpicker/dist/css/bootstrap-colorpicker.min.css">
-    <link rel="stylesheet" href="<?php echo base_url(); ?>assets/stisla/modules/select2/dist/css/select2.min.css">
-    <link rel="stylesheet" href="<?php echo base_url(); ?>assets/stisla/modules/jquery-selectric/selectric.css">
-    <link rel="stylesheet" href="<?php echo base_url(); ?>assets/stisla/modules/bootstrap-timepicker/css/bootstrap-timepicker.min.css">
-    <link rel="stylesheet" href="<?php echo base_url(); ?>assets/stisla/modules/bootstrap-tagsinput/dist/bootstrap-tagsinput.css"> -->
 
     <!-- Template CSS -->
     <link rel="stylesheet" href="<?php echo base_url(); ?>assets/stisla/css/style.css">
@@ -99,7 +93,7 @@ $user = $this->fungsi->user_login();
                             </li>
 
                             <div class="mt-4 mb-4 p-3 hide-sidebar-mini">
-                                <a href="#" class="btn btn-primary btn-lg btn-block btn-icon-split">
+                                <a href="<?php echo base_url('cetakformulir') ?>" class="btn btn-primary btn-lg btn-block btn-icon-split">
                                     <i class="fas fa-cloud-download-alt"></i> Cetak Formulir
                                 </a>
                             </div>
@@ -147,19 +141,16 @@ $user = $this->fungsi->user_login();
 
     <!-- General JS Scripts -->
     <script src="<?php echo base_url(); ?>assets/stisla/modules/jquery.min.js"></script>
-    <script src="<?php echo base_url(); ?>assets/stisla/modules/popper.js"></script>
-    <script src="<?php echo base_url(); ?>assets/stisla/modules/tooltip.js"></script>
+    <!-- <script src="<?php echo base_url(); ?>assets/stisla/modules/popper.js"></script>
+    <script src="<?php echo base_url(); ?>assets/stisla/modules/tooltip.js"></script> -->
     <script src="<?php echo base_url(); ?>assets/stisla/modules/bootstrap/js/bootstrap.min.js"></script>
     <script src="<?php echo base_url(); ?>assets/stisla/modules/nicescroll/jquery.nicescroll.min.js"></script>
     <script src="<?php echo base_url(); ?>assets/stisla/modules/moment.min.js"></script>
     <script src="<?php echo base_url(); ?>assets/stisla/js/stisla.js"></script>
 
     <!-- JS Libraies -->
-    <!-- <script src="<?php echo base_url(); ?>assets/stisla/modules/chocolat/dist/js/jquery.chocolat.min.js"></script> -->
-    <!-- <script src="<?php echo base_url(); ?>assets/stisla/modules/jquery-ui/jquery-ui.min.js"></script> -->
 
     <!-- Page Specific JS File -->
-    <!-- <script src="<?php echo base_url(); ?>assets/stisla/js/page/forms-advanced-forms.js"></script> -->
 
     <!-- Template JS File -->
     <script src="<?php echo base_url(); ?>assets/stisla/js/scripts.js"></script>

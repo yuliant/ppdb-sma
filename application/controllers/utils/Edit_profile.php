@@ -8,12 +8,15 @@ class Edit_profile extends CI_Controller
     {
         parent::__construct();
         $this->load->library('form_validation');
+        $this->load->model('user/Formulir_m', 'Formulir_m');
         check_not_login();
     }
 
     public function index()
     {
         $data['tittle'] = "Edit Profil";
+        $data['user'] = $this->fungsi->user_login();
+        $id = $data['user']->user_id;
 
         $this->form_validation->set_rules('nama', 'Nama', 'required|trim');
         //message
@@ -23,9 +26,15 @@ class Edit_profile extends CI_Controller
         } else {
             $nama = htmlspecialchars($this->input->post('nama'), true);
 
+            if ($this->Formulir_m->getDataDiri($id)->num_rows() > 0) {
+                $this->db->set('nama', strtoupper($nama));
+                $this->db->where('id_user', $id);
+                $this->db->update('data_diri_pribadi');
+            }
+
             // cek jika ada gambar
             $upload_image = $_FILES['image']['name'];
-            $username = $this->fungsi->user_login()->username;
+            $username = $data['user']->username;
 
             if ($upload_image) {
                 $config['allowed_types'] = 'gif|jpg|png';
@@ -39,7 +48,7 @@ class Edit_profile extends CI_Controller
                 $this->load->library('upload', $config);
 
                 if ($this->upload->do_upload('image')) {
-                    $old_image = $this->fungsi->user_login()->image;
+                    $old_image = $data['user']->image;
                     if ($old_image != 'default.jpg') {
                         unlink(FCPATH . 'assets/data/' . $old_image);
                     }

@@ -73,6 +73,9 @@ $route['formulir/berkas'] = 'user/formulir/berkas';
 $route['formulir/editdatadiri'] = 'user/formulir/editdatadiri';
 $route['formulir/editdataortu'] = 'user/formulir/editdataortu';
 $route['formulir/editberkas'] = 'user/formulir/editberkas';
+//formulir
+$route['cetakformulir'] = 'user/cetakformulir/index';
+$route['cetakformulir/proses'] = 'user/cetakformulir/proses';
 
 //utils
 //profil

@@ -10,15 +10,17 @@
     <div class="section-body">
         <div class="col-12 col-sm-8 col-lg-8">
             <div class="card">
-                <div class="card-header">
-                    <h4>Edit Profil <?php echo $this->fungsi->user_login()->username; ?></h4>
-                </div>
                 <div class="card-body">
                     <?php echo form_open_multipart('editprofil'); ?>
 
+                    <label>Username</label>
+                    <div class="form-group">
+                        <input type="text" class="form-control" value="<?php echo $user->username; ?>" readonly>
+                    </div>
+
                     <label>Nama Lengkap*</label>
                     <div class="form-group">
-                        <input type="text" name="nama" id="nama" class="form-control" value="<?php echo $this->fungsi->user_login()->nama; ?>">
+                        <input type="text" name="nama" id="nama" class="form-control" value="<?php echo $user->nama; ?>">
                         <?php echo form_error('nama', '<small class="text-danger pl-3">', '</small>'); ?>
                     </div>
 
@@ -27,7 +29,7 @@
                         <div class="col-sm-3">
                             <img src="
                             <?php echo base_url('assets/data/') .
-                                $this->fungsi->user_login()->image; ?>" class="img-thumbnail">
+                                $user->image; ?>" class="img-thumbnail">
                         </div>
                         <div class="col-sm-9">
                             <div class="custom-file">

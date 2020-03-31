@@ -3,6 +3,14 @@ UPDATE NOTE
 *******************
 
 *******************
+Version 0.1.3 (beta) 31 Mar 2020
+*******************
+* Perubahan pada database, silahkan import kembali.
+* Menu cetak formulir sudah bisa digunakan.
+* Qrcode sudah bisa ditampilkan
+* Mengoptimalkan query
+
+*******************
 Version 0.1.2 (beta) 29 Mar 2020
 *******************
 * Perubahan pada database, silahkan import kembali

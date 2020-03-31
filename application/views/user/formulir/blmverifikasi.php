@@ -11,7 +11,7 @@
                     <div class="card-body">
                         <div class="empty-state" data-height="400">
                             <div class="empty-state-icon bg-danger">
-                                <i class="fas fa-times"></i>
+                                <i class="fas fa-exclamation"></i>
                             </div>
                             <h2>Akun anda belum di verifikasi admin</h2>
                             <p class="lead">
