@@ -38,7 +38,7 @@
                             <p class="lead">
                                 Silahkan isi data lainnya yang masih kosong.
                             </p>
-                            <a href="<?php echo base_url('formulir/berkas') ?>" class="btn btn-success mt-4">Isi Kelangkapan Berkas</a>
+                            <a href="<?php echo base_url('formulir/berkas') ?>" class="btn btn-success mt-4">Selanjutnya Isi Kelangkapan Berkas</a>
                             <a href="<?php echo base_url('formulir/editdataortu') ?>" class="mt-4 text-success">Edit data orang tua</a>
                         </div>
 

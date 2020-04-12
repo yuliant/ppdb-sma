@@ -30,7 +30,7 @@
                     <strong>Hubungi:</strong><br>
                     Masrizal Eka Y.<br>
                     WA. <a href="https://api.whatsapp.com/send?phone=089695615256&text=Assalamulaikum ..." target="_blank">089695615256</a><br>
-                    EMAIL. <a href="mailto:masrizal04@gmail.com?subject=Email dari website PPDB Smagrisda">masrizal04@gmail.com</a><br>
+                    EMAIL. <a href="mailto:masrizal04@gmail.com?subject=Email dari website PPDB Smagrisda" target="_blank">masrizal04@gmail.com</a><br>
                     Jl. Stadion Lama, Kemiri, Kec. Sidoarjo, Kabupaten Sidoarjo, Jawa Timur 61234
                 </address>
             </div>

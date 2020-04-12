@@ -22,15 +22,15 @@
                     <div class="author-box-left">
                         <img alt="image" src="<?php
                                                 echo base_url('assets/data/') .
-                                                    $this->fungsi->user_login()->image; ?>" class="author-box-picture">
+                                                    $user->image; ?>" class="author-box-picture">
                     </div>
                     <div class="author-box-details">
                         <div class="author-box-name">
-                            <h5 class="text-primary"><?php echo $this->fungsi->user_login()->nama; ?></h5>
+                            <h5 class="text-primary"><?php echo $user->nama; ?></h5>
                         </div>
-                        <div class="author-box-job"><?php echo $this->fungsi->user_login()->username; ?></div>
+                        <div class="author-box-job"><?php echo $user->username; ?></div>
                         <div class="author-box-description">
-                            <p>Mamber since <?php echo date('d F Y', $this->fungsi->user_login()->date_created); ?></p>
+                            <p>Bergabung sejak <?php echo date("d-m-Y", strtotime($user->date_created)); ?></p>
                         </div>
                     </div>
                 </div>

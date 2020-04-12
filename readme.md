@@ -10,4 +10,5 @@ Catatan : anda dapat melihat catatan pembaruan repository [disini](https://githu
 3. Lakukan konfigurasi pada `.\application\config\config.php` untuk mengatur `$config['base_url']` dan `.\application\config\database.php` untuk mengatur database.
 4. Tambahkan file .htaccess untuk bypass index.php .
 5. Periksa ceklogin_helper.php pada folder helper `.\application\helpers\` untuk menyesuaikan role pengguna.
-6. Done, silahkan jalankan website.
+6. Periksa Pagination_m.php pada folder helper `.\application\models\admin\` untuk menyesuaikan url pagination pada halaman admin (menu pendaftar, user dan formulir).
+7. Done, silahkan jalankan website.

@@ -66,6 +66,26 @@ $user = $this->fungsi->user_login();
                                     <i class="fas fa-fire"></i> <span>Dashboard</span>
                                 </a>
                             </li>
+
+                            <li <?php echo $this->uri->segment(1) == 'showuser' ? 'class="active"' : '' ?>>
+                                <a class="nav-link" href="
+                                <?php echo base_url('showuser') ?>">
+                                    <i class="far fa-user"></i> <span>User</span>
+                                </a>
+                            </li>
+
+                            <li <?php echo $this->uri->segment(1) == 'pendaftar' ? 'class="active"' : '' ?>>
+                                <a class="nav-link" href="<?php echo base_url('pendaftar') ?>">
+                                    <i class="far fa-file-alt"></i> <span>Pendaftar</span>
+                                </a>
+                            </li>
+
+                            <li <?php echo $this->uri->segment(1) == 'showformulir' ? 'class="active"' : '' ?>>
+                                <a class="nav-link" href="
+                                <?php echo base_url('showformulir') ?>">
+                                    <i class="far fa-file-alt"></i> <span>Formulir</span>
+                                </a>
+                            </li>
                             <!-- end user menu -->
                         <?php } ?>
 
@@ -102,6 +122,31 @@ $user = $this->fungsi->user_login();
                         <?php } ?>
 
                         <li class="menu-header">Pengaturan</li>
+                        <?php if ($user->level == 1) { ?>
+                            <li class="dropdown 
+                            <?php echo $this->uri->segment(1) == 'pembayaran'
+                                || $this->uri->segment(1) == 'Agenda'
+                                || $this->uri->segment(1) == 'kontak admin' ? 'active' : '' ?>">
+                                <a href="" class="nav-link has-dropdown">
+                                    <i class="fas fa-desktop"></i> <span>Environment</span>
+                                </a>
+                                <ul class="dropdown-menu">
+                                    <li <?php echo $this->uri->segment(1) == 'pembayaran' ? 'class="active"' : '' ?>>
+                                        <a href="<?php echo "#" //base_url('pembayaran') 
+                                                    ?>">Pembayaran</a>
+                                    </li>
+                                    <li <?php echo $this->uri->segment(1) == 'Agenda' ? 'class="active"' : '' ?>>
+                                        <a href="<?php echo "#" //base_url('Agenda') 
+                                                    ?>">Agenda</a>
+                                    </li>
+                                    <li <?php echo $this->uri->segment(1) == 'kontak admin' ? 'class="active"' : '' ?>>
+                                        <a href="<?php echo "#" //base_url('kontak admin') 
+                                                    ?>">Kontak Admin</a>
+                                    </li>
+                                </ul>
+                            </li>
+                        <?php } ?>
+
                         <li class="dropdown <?php echo $this->uri->segment(1) == 'profil' || $this->uri->segment(1) == 'editprofil' || $this->uri->segment(1) == 'changepass' ? 'active' : '' ?>">
                             <a href="" class="nav-link has-dropdown">
                                 <i class="fas fa-ellipsis-h"></i> <span>Utilities</span>

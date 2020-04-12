@@ -7,15 +7,15 @@ class Cetakformulir extends CI_Controller
     public function __construct()
     {
         parent::__construct();
+        check_not_login();
         $this->load->model('user/Formulir_m', 'Formulir_m');
         $this->load->model('Show_m');
-        check_not_login();
     }
 
     public function index()
     {
-        $data_user = $this->fungsi->user_login();
-        $id = $data_user->user_id;
+        $data['user'] = $this->fungsi->user_login();
+        $id = $data['user']->user_id;
 
         $cekdatadiri = $this->Formulir_m->getDataDiri($id)->num_rows();
         $cekdataortu = $this->Formulir_m->getDataOrtu($id)->num_rows();

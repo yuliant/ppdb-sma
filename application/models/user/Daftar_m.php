@@ -21,6 +21,7 @@ class Daftar_m extends CI_Model
         $this->db->set('email', htmlspecialchars($post['email'], true));
         $this->db->set('foto_bukti_transfer', $foto_pembayaran);
         $this->db->set('status', 0);
+        $this->db->set('daftar_created', gmdate("Y-m-d H:i:s", time() + 3600 * 7));
         $this->db->insert('user_daftar');
     }
 
@@ -32,6 +33,7 @@ class Daftar_m extends CI_Model
             $this->db->set('foto_bukti_transfer', $foto_pembayaran);
         }
         $this->db->set('status', 0);
+        $this->db->set('daftar_created', gmdate("Y-m-d H:i:s", time() + 3600 * 7));
         $this->db->where('id_user', $id);
         $this->db->update('user_daftar');
     }

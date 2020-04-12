@@ -44,14 +44,19 @@ class Formulir_m extends CI_Model
         return $query;
     }
 
-    public function getAllFormulir($id)
+    public function getAllFormulir($id = null, $tahun = null)
     {
         $this->db->select('data_diri_pribadi.*, data_diri_sekolah.*, data_ortu.*, data_berkas.*');
         $this->db->from('data_diri_pribadi');
         $this->db->join('data_diri_sekolah', 'data_diri_sekolah.id_user = data_diri_pribadi.id_user', 'left');
         $this->db->join('data_ortu', 'data_ortu.id_user = data_diri_pribadi.id_user', 'left');
         $this->db->join('data_berkas', 'data_berkas.id_user = data_diri_pribadi.id_user', 'left');
-        $this->db->where('data_diri_pribadi.id_user', $id);
+        if ($id != null) {
+            $this->db->where('data_diri_pribadi.id_user', $id);
+        }
+        if ($tahun != null) {
+            $this->db->where("DATE_FORMAT(data_berkas.berkas_created,'%Y')", $tahun);
+        }
         $query = $this->db->get();
         return $query;
     }
@@ -99,6 +104,7 @@ class Formulir_m extends CI_Model
         $this->db->set('ipa', htmlspecialchars($post['ipa'], true));
         $this->db->set('foto_ijasah_smp', $fotoijasah);
         $this->db->set('foto_shun', $fotoshun);
+        $this->db->set('berkas_created', gmdate("Y-m-d H:i:s", time() + 3600 * 7));
         $this->db->insert('data_berkas');
     }
 
@@ -152,6 +158,7 @@ class Formulir_m extends CI_Model
         if ($fotoshun != null) {
             $this->db->set('foto_shun', $fotoshun);
         }
+        $this->db->set('berkas_created', gmdate("Y-m-d H:i:s", time() + 3600 * 7));
         $this->db->where('id_user', $id);
         $this->db->update('data_berkas');
     }

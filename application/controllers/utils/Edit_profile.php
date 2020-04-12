@@ -7,9 +7,9 @@ class Edit_profile extends CI_Controller
     public function __construct()
     {
         parent::__construct();
+        check_not_login();
         $this->load->library('form_validation');
         $this->load->model('user/Formulir_m', 'Formulir_m');
-        check_not_login();
     }
 
     public function index()

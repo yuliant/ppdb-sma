@@ -38,7 +38,7 @@
                             <p class="lead">
                                 Silahkan periksa apakah ada data yang masih kosong. Jika tidak, anda dapat mencetak formulir.
                             </p>
-                            <a href="<?php echo base_url('cetakformulir') ?>" class="btn btn-success mt-4">Cetak Formulir</a>
+                            <a href="<?php echo base_url('cetakformulir') ?>" class="btn btn-success mt-4">Selanjutnya Cetak Formulir</a>
                             <a href="<?php echo base_url('formulir/editberkas') ?>" class="mt-4 text-success">Edit data berkas</a>
                         </div>
 

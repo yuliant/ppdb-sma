@@ -12,6 +12,7 @@ class Profil extends CI_Controller
 
     public function index()
     {
+        $data['user'] = $this->fungsi->user_login();
         $data['tittle'] = "Profil";
         $this->template->load('temp_dashboard', 'utils/profile', $data);
     }

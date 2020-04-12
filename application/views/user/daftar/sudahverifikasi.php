@@ -17,7 +17,7 @@
                             <p class="lead">
                                 Silahkan lakukan pengisian formulir. Isi secara berurutan mulai dari data diri siswa, data orang tua, dan kelengkapan berkas.
                             </p>
-                            <a href="<?php echo base_url('formulir') ?>" class="btn btn-success mt-4">Isi Formulir</a>
+                            <a href="<?php echo base_url('formulir') ?>" class="btn btn-success mt-4">Selanjutnya Isi Formulir</a>
                             <a href="#" data-toggle="modal" data-target="#logoutModal" class="mt-4 text-success">Butuh bantuan?</a>
                         </div>
                     </div>
