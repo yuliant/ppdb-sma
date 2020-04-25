@@ -122,6 +122,7 @@ class Daftar extends CI_Controller
                     // cek jika ada gambar
                     $upload_image = $_FILES['image']['name'];
                     $username = $data['user']->username;
+                    $foto_pembayaran = null;
 
                     if ($upload_image) {
                         $config['allowed_types'] = 'gif|jpg|png';

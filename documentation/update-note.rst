@@ -3,10 +3,18 @@ UPDATE NOTE
 *******************
 
 *******************
+Version 0.2.0 (beta) 25 April 2020
+*******************
+* Perubahan pada database, silahkan import kembali.
+* Menu semua user dan semua formulir sudah dapat digunakan dengan pagination dan search.
+* Sudah dapat menghapus folder data user (tapi blm menerapkan relation)
+* Optimalisasi pada website.
+
+*******************
 Version 0.1.4 (beta) 13 April 2020
 *******************
 * Perubahan pada database, silahkan import kembali.
-* Menu pendaftar sudah dapat digunakan dengan pagination dan search.
+* Menu para pendaftar sudah dapat digunakan dengan pagination dan search.
 * Menu user dan formulir pada admin sudah dibuat tapi blm bisa digunakan.
 * Mengoptimalkan query.
 * Edit file readme.md

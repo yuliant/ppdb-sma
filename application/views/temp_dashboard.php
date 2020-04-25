@@ -70,20 +70,20 @@ $user = $this->fungsi->user_login();
                             <li <?php echo $this->uri->segment(1) == 'showuser' ? 'class="active"' : '' ?>>
                                 <a class="nav-link" href="
                                 <?php echo base_url('showuser') ?>">
-                                    <i class="far fa-user"></i> <span>User</span>
+                                    <i class="far fa-user"></i> <span> Semua User</span>
                                 </a>
                             </li>
 
                             <li <?php echo $this->uri->segment(1) == 'pendaftar' ? 'class="active"' : '' ?>>
                                 <a class="nav-link" href="<?php echo base_url('pendaftar') ?>">
-                                    <i class="far fa-file-alt"></i> <span>Pendaftar</span>
+                                    <i class="fas fa-user-plus"></i> <span>Para Pendaftar</span>
                                 </a>
                             </li>
 
                             <li <?php echo $this->uri->segment(1) == 'showformulir' ? 'class="active"' : '' ?>>
                                 <a class="nav-link" href="
                                 <?php echo base_url('showformulir') ?>">
-                                    <i class="far fa-file-alt"></i> <span>Formulir</span>
+                                    <i class="far fa-file-alt"></i> <span>Semua Formulir</span>
                                 </a>
                             </li>
                             <!-- end user menu -->

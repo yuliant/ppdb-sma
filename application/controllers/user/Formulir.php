@@ -308,6 +308,8 @@ class Formulir extends CI_Controller
                 $upload_ijasah = $_FILES['foto_ijasah_smp']['name'];
                 $upload_shun = $_FILES['foto_shun']['name'];
                 $username = $data_user->username;
+                $input_ijasah = null;
+                $input_shun = null;
 
                 if ($upload_ijasah) {
                     $config['allowed_types'] = 'jpg|png';

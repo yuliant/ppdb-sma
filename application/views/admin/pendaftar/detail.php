@@ -2,7 +2,7 @@
     <div class="section-header">
         <h1><?php echo $tittle; ?></h1>
         <div class="section-header-breadcrumb">
-            <div class="breadcrumb-item"><a href="<?php echo base_url('pendaftar') ?>">Pendaftar</a></div>
+            <div class="breadcrumb-item"><a href="<?php echo base_url('pendaftar') ?>">Para Pendaftar</a></div>
             <div class="breadcrumb-item">Detail Pendaftaran</div>
         </div>
     </div>
@@ -14,6 +14,9 @@
         </div>
 
         <div class="col-12 col-sm-8 col-lg-8">
+
+            <i class="fas fa-back"></i> <a href="<?php echo base_url('pendaftar') ?>" class="btn btn-info mb-3">Cancel</a>
+
             <div class="card">
                 <div class="card-body">
 
@@ -36,11 +39,14 @@
                     <label>No. Telp / WA</label>
                     <div class="form-group">
                         <input type="number" class="form-control" value="<?php echo $daftar->telp; ?>" readonly>
+                        <a class="btn mt-1 text-right" href="
+                        <?php echo 'https://api.whatsapp.com/send?phone=' . $daftar->telp . '&text=Assalamulaikum' ?>" target="_blank">OPEN WA <i class="fab fa-whatsapp"></i></a>
                     </div>
 
                     <label>Email</label>
                     <div class="form-group">
                         <input type="email" class="form-control" value="<?php echo $daftar->email; ?>" readonly>
+                        <a class="btn mt-1 text-right" href="<?php echo 'mailto:' . $daftar->email . '?subject=Email dari website PPDB Smagrisda' ?>" target=" _blank">OPEN EMAIL <i class="fas fa-paper-plane"></i></a>
                     </div>
 
                     <label>Bukti Transfer Pembayaran*</label>
@@ -55,9 +61,8 @@
                     <div class="card-footer text-right">
                         <form action="<?php echo base_url('pendaftar/changestatus') ?>" method="post">
                             <input type="hidden" name="id_user" value="<?php echo $daftar->id_user ?>">
-                            <button class="btn btn-danger mr-1" name="tolak" type="tolak">Tolak</button>
                             <button class="btn btn-success mr-1" name="konfirmasi" type="konfirmasi">Konfirmasi</button>
-                            <a href="<?php echo base_url('pendaftar') ?>" class="btn btn-light">Cancel</a>
+                            <button class="btn btn-danger mr-1" name="tolak" type="tolak">Tolak</button>
                         </form>
                     </div>
                 </div>

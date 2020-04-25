@@ -73,7 +73,7 @@ $route['formulir/berkas'] = 'user/formulir/berkas';
 $route['formulir/editdatadiri'] = 'user/formulir/editdatadiri';
 $route['formulir/editdataortu'] = 'user/formulir/editdataortu';
 $route['formulir/editberkas'] = 'user/formulir/editberkas';
-//formulir
+//cetak formulir
 $route['cetakformulir'] = 'user/cetakformulir/index';
 $route['cetakformulir/proses'] = 'user/cetakformulir/proses';
 
@@ -86,12 +86,21 @@ $route['changepass'] = 'utils/change_pass/index';
 //admin
 //dashboard
 $route['admindashboard'] = 'admin/dashboard/index';
-
 //pendaftar
 $route['pendaftar'] = 'admin/pendaftar/index';
 $route['pendaftar/index'] = 'admin/pendaftar/index';
 $route['pendaftar/index/(:any)'] = 'admin/pendaftar/index/$1';
 $route['pendaftar/detail/(:any)'] = 'admin/pendaftar/detail/$1';
 $route['pendaftar/changestatus'] = 'admin/pendaftar/changestatus';
+//showuser
 $route['showuser'] = 'admin/showuser/index';
+$route['showuser/index'] = 'admin/showuser/index';
+$route['showuser/index/(:any)'] = 'admin/showuser/index/$1';
+$route['showuser/detail/(:any)'] = 'admin/showuser/detail/$1';
+$route['showuser/changestatus'] = 'admin/showuser/changestatus';
+$route['showuser/deleteuser'] = 'admin/showuser/deleteuser';
+//showformulir
 $route['showformulir'] = 'admin/showformulir/index';
+$route['showformulir/index'] = 'admin/showformulir/index';
+$route['showformulir/index/(:any)'] = 'admin/showformulir/index/$1';
+$route['showformulir/detail/(:any)'] = 'admin/showformulir/detail/$1';

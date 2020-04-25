@@ -5,7 +5,7 @@
         <?php echo $this->session->flashdata('message'); ?>
 
         <!-- jika data tidak ditemukan -->
-        <?php if (empty($pendaftar_row->result())) : ?>
+        <?php if (empty($formulir_row->result())) : ?>
             <div class="alert alert-danger" role="alert">
                 Data tidak ditemukan
             </div>
@@ -17,7 +17,7 @@
 
                 <!-- search pendaftar -->
                 <div class="card-header-action">
-                    <form class="" action="<?php echo base_url('pendaftar/index'); ?>" method="POST">
+                    <form class="" action="<?php echo base_url('showformulir/index'); ?>" method="POST">
                         <div class="input-group">
                             <input type="text" class="form-control" placeholder="Search" name="keyword" value="<?php echo set_value('keyword'); ?>" autofocus>
                             <div class="input-group-btn">
@@ -37,30 +37,24 @@
                         <thead>
                             <tr>
                                 <th>#</th>
-                                <th>Nama Pendaftar</th>
-                                <th>Tanggal daftar</th>
-                                <th>Status</th>
+                                <th>Nama Formulir</th>
+                                <th>Username</th>
+                                <th>Tanggal dibuat</th>
                                 <th>Action</th>
                             </tr>
                         </thead>
                         <tbody>
-                            <?php foreach ($pendaftar_row->result() as $key => $data) {
+                            <?php foreach ($formulir_row->result() as $key => $data) {
                             ?>
-                                <tr <?php if ($data->status == 0) { ?> class="table-warning" <?php } else if ($data->status == 1) { ?> class="" <?php } else { ?> class="table-danger" <?php } ?>>
+                                <tr>
                                     <td><?php echo ++$start ?></td>
-                                    <td><a href="<?php echo base_url('pendaftar/detail/') . $data->id_user ?>"><?php echo $data->nama ?></a></td>
-                                    <td><?php echo date("d-m-Y", strtotime($data->daftar_created)) ?></td>
+                                    <td><a href="<?php echo base_url('showuser/detail/') . $data->id_user ?>"><?php echo $data->nama ?></a></td>
+                                    <td><?php echo $data->username ?></td>
                                     <td>
-                                        <?php if ($data->status == 0) { ?>
-                                            <div class="badge badge-warning">Belum check</div>
-                                        <?php } else if ($data->status == 1) { ?>
-                                            <div class="badge badge-success">Dikonfirmasi</div>
-                                        <?php } else { ?>
-                                            <div class="badge badge-danger">Ditolak</div>
-                                        <?php } ?>
+                                        <?php echo date("d-m-Y", strtotime($data->berkas_created)) ?>
                                     </td>
                                     <td>
-                                        <a href="<?php echo base_url('pendaftar/detail/') . $data->id_user ?>" class="badge badge-info">Baca</a>
+                                        <a href="<?php echo base_url('showformulir/detail/') . $data->id_user ?>" class="badge badge-info">Baca</a>
                                     </td>
                                 </tr>
                             <?php

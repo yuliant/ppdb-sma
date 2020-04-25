@@ -14,7 +14,7 @@ class Pendaftar_m extends CI_Model
             $this->db->like('user.nama', $keyword);
         }
 
-        $this->db->order_by('user_daftar.daftar_created', 'asc');
+        $this->db->order_by('user_daftar.daftar_created', 'desc');
         $this->db->limit($limit, $start);
         $query = $this->db->get();
         return $query;

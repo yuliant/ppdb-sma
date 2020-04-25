@@ -16,20 +16,20 @@ class Pendaftar extends CI_Controller
 
     public function index()
     {
-        $data['tittle'] = "Pendaftar";
+        $data['tittle'] = "Para Pendaftar";
 
         //load library pagination
         $this->load->library('pagination');
 
-        //delete session from 'keywordPreprocessing'
-        $this->session->unset_userdata('keywordPreprocessing');
+        //delete session from 'keywordPendaftar'
+        $this->session->unset_userdata('keywordPendaftar');
 
         //ambil data searching
         if ($this->input->post('submit')) {
             $data['keyword'] = $this->input->post('keyword');
-            $this->session->set_userdata('keywordPreprocessing', $data['keyword']);
+            $this->session->set_userdata('keywordPendaftar', $data['keyword']);
         } else {
-            $data['keyword'] = $this->session->userdata('keywordPreprocessing');
+            $data['keyword'] = $this->session->userdata('keywordPendaftar');
         }
 
         //menghitung jumlah data yang dicari
@@ -60,7 +60,7 @@ class Pendaftar extends CI_Controller
 
     public function detail($id)
     {
-        $data['tittle'] = "Pendaftar";
+        $data['tittle'] = "Detail Pendaftar";
         $data['daftar'] = $this->Pendaftar_m->UserDaftarById($id)->row();
         $this->template->load('temp_dashboard', 'admin/pendaftar/detail', $data);
     }
