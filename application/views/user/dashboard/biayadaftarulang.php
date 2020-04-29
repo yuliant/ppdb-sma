@@ -27,8 +27,8 @@
         <div class="card col-12 col-sm-8 col-lg-8">
             <div class="card-body">
                 <div class="chocolat-parent">
-                    <a href="<?php echo base_url() ?>assets/data/admin_ppdb_2019.jpg" class="chocolat-image" title="Biaya Daftar Ulang">
-                        <img alt="image" src="<?php echo base_url() ?>assets/data/admin_ppdb_2019.jpg" class="img-fluid">
+                    <a href="<?php echo base_url('assets/data/') . $data->foto_daftar_ulang ?>" class="chocolat-image" title="Biaya Daftar Ulang">
+                        <img alt="image" src="<?php echo base_url('assets/data/') . $data->foto_daftar_ulang ?>" class="img-fluid">
                     </a>
                 </div>
             </div>

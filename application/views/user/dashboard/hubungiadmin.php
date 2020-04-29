@@ -28,10 +28,20 @@
             <div class="card-body">
                 <address>
                     <strong>Hubungi:</strong><br>
-                    Masrizal Eka Y.<br>
-                    WA. <a href="https://api.whatsapp.com/send?phone=089695615256&text=Assalamulaikum ..." target="_blank">089695615256</a><br>
-                    EMAIL. <a href="mailto:masrizal04@gmail.com?subject=Email dari website PPDB Smagrisda" target="_blank">masrizal04@gmail.com</a><br>
-                    Jl. Stadion Lama, Kemiri, Kec. Sidoarjo, Kabupaten Sidoarjo, Jawa Timur 61234
+                    <?php echo $data->nama_kontak ?><br>
+
+                    WA. <a href="
+                        <?php echo 'https://api.whatsapp.com/send?phone=' .
+                            $data->nomor_kontak .
+                            '&text=Assalamulaikum' ?>" target="_blank">
+                        <?php echo $data->nomor_kontak ?>
+                    </a><br>
+
+                    EMAIL. <a href="<?php echo 'mailto:' . $data->email_admin . '?subject=Email dari website PPDB Smagrisda' ?>" target="_blank">
+                        <?php echo $data->email_admin ?>
+                    </a><br>
+
+                    <?php echo $data->alamat_admin ?>
                 </address>
             </div>
         </div>

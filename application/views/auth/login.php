@@ -31,13 +31,13 @@
 
             <div class="col-xl-10 col-lg-12 col-md-9">
 
-                <div class="card o-hidden border-0 shadow-lg my-4">
+                <div class="card o-hidden border-0 shadow-lg my-5">
                     <div class="card-body p-0">
                         <!-- Nested Row within Card Body -->
                         <div class="row">
-                            <div class="col-lg-7 d-none d-lg-block bg-primary">
+                            <div class="col-lg-7 d-none d-lg-block">
                                 <!-- change image here -->
-                                <!-- <img src="http://localhost:90/sistem-barang-bukti/assets/img/logo.png"> -->
+                                <img style="height: 400px" src="<?php echo base_url() ?>assets/data/bg_login.jpg">
                             </div>
                             <div class="col-lg-5">
                                 <div class="p-5">
@@ -178,11 +178,7 @@
                 </div>
                 <div class="modal-body">
                     <pre>
-Gelombang Pertama :
-22 Maret 2020 - 22 April 2020.
-
-Gelombang Kedua:
-23 April 2020 - 22 Juni 2020.
+<?php echo $env_agenda->agenda ?>
                 </pre>
                 </div>
                 <div class="modal-footer">
@@ -205,10 +201,20 @@ Gelombang Kedua:
                 <div class="modal-body">
                     <address>
                         <strong>Hubungi:</strong><br>
-                        Masrizal Eka Y.<br>
-                        WA. <a href="https://api.whatsapp.com/send?phone=089695615256&text=Assalamulaikum ..." target="_blank">089695615256</a><br>
-                        EMAIL. <a href="mailto:masrizal04@gmail.com?subject=Email dari website PPDB Smagrisda" target="_blank">masrizal04@gmail.com</a><br>
-                        Jl. Stadion Lama, Kemiri, Kec. Sidoarjo, Kabupaten Sidoarjo, Jawa Timur 61234
+                        <?php echo $env_kontak->nama_kontak ?><br>
+
+                        WA. <a href="
+                        <?php echo 'https://api.whatsapp.com/send?phone=' .
+                            $env_kontak->nomor_kontak .
+                            '&text=Assalamulaikum' ?>" target="_blank">
+                            <?php echo $env_kontak->nomor_kontak ?>
+                        </a><br>
+
+                        EMAIL. <a href="<?php echo 'mailto:' . $env_kontak->email_admin . '?subject=Email dari website PPDB Smagrisda' ?>" target="_blank">
+                            <?php echo $env_kontak->email_admin ?>
+                        </a><br>
+
+                        <?php echo $env_kontak->alamat_admin ?>
                     </address>
                 </div>
                 <div class="modal-footer">

@@ -27,11 +27,7 @@
         <div class="card col-12 col-sm-8 col-lg-8">
             <div class="card-body">
                 <pre>
-Gelombang Pertama :
-22 Maret 2020 - 22 April 2020.
-
-Gelombang Kedua:
-23 April 2020 - 22 Juni 2020.
+<?php echo $data->agenda ?>
                 </pre>
             </div>
         </div>

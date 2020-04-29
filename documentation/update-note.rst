@@ -3,6 +3,14 @@ UPDATE NOTE
 *******************
 
 *******************
+Version 0.2.1 (beta) 29 April 2020
+*******************
+* Perubahan pada database, silahkan import kembali.
+* Menu enviroment dan dashboard sudah dapat digunakan.
+* belum menerapkan relation pada fitur hapus data.
+* Optimalisasi pada website.
+
+*******************
 Version 0.2.0 (beta) 25 April 2020
 *******************
 * Perubahan pada database, silahkan import kembali.

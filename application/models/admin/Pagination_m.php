@@ -21,7 +21,7 @@ class Pagination_m extends CI_Model
 
     public function perPage()
     {
-        return 1;
+        return 10;
     }
 }
 

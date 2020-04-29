@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Generation Time: Apr 25, 2020 at 03:52 AM
+-- Generation Time: Apr 27, 2020 at 10:50 PM
 -- Server version: 5.7.26
 -- PHP Version: 7.2.18
 
@@ -155,6 +155,75 @@ CREATE TABLE IF NOT EXISTS `data_qrcode` (
 INSERT INTO `data_qrcode` (`id_data_qrcode`, `id_user`, `token`) VALUES
 (15, 24, '9sZ0Be68FT'),
 (14, 23, 'Tcwg5aMzjG');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `env_agenda`
+--
+
+DROP TABLE IF EXISTS `env_agenda`;
+CREATE TABLE IF NOT EXISTS `env_agenda` (
+  `env_agenda_id` int(11) NOT NULL AUTO_INCREMENT,
+  `agenda` text NOT NULL,
+  `tapel` varchar(10) NOT NULL,
+  `foto_daftar_ulang` varchar(255) NOT NULL,
+  `aktif` int(1) NOT NULL,
+  PRIMARY KEY (`env_agenda_id`)
+) ENGINE=MyISAM AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `env_agenda`
+--
+
+INSERT INTO `env_agenda` (`env_agenda_id`, `agenda`, `tapel`, `foto_daftar_ulang`, `aktif`) VALUES
+(1, 'Gelombang 1 : \r\n29 April 2020 - 29 Mei 2020\r\n\r\nGelombang 2 : \r\n30 Mei 2020 -  30 Juni 2020', '2020/2021', 'admin_ppdb_2019.jpg', 1);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `env_kontak_admin`
+--
+
+DROP TABLE IF EXISTS `env_kontak_admin`;
+CREATE TABLE IF NOT EXISTS `env_kontak_admin` (
+  `env_kontak_id` int(11) NOT NULL AUTO_INCREMENT,
+  `nama_kontak` varchar(40) NOT NULL,
+  `nomor_kontak` varchar(16) NOT NULL,
+  `email_admin` varchar(50) NOT NULL,
+  `alamat_admin` text NOT NULL,
+  PRIMARY KEY (`env_kontak_id`)
+) ENGINE=MyISAM AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `env_kontak_admin`
+--
+
+INSERT INTO `env_kontak_admin` (`env_kontak_id`, `nama_kontak`, `nomor_kontak`, `email_admin`, `alamat_admin`) VALUES
+(1, 'Masrizal Eka Yulianto.', '089695615257', 'masrizalsn@gmail.com', 'Jl. Stadion Lama, Kemiri, Kec. Sidoarjo, Kabupaten Sidoarjo, Jawa Timur 61237');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `env_pembayaran`
+--
+
+DROP TABLE IF EXISTS `env_pembayaran`;
+CREATE TABLE IF NOT EXISTS `env_pembayaran` (
+  `env_pembayaran_id` int(11) NOT NULL AUTO_INCREMENT,
+  `nama_bank` varchar(10) NOT NULL,
+  `jml_uang` varchar(8) NOT NULL,
+  `rekening` varchar(40) NOT NULL,
+  `atas_nama` varchar(40) NOT NULL,
+  PRIMARY KEY (`env_pembayaran_id`)
+) ENGINE=MyISAM AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `env_pembayaran`
+--
+
+INSERT INTO `env_pembayaran` (`env_pembayaran_id`, `nama_bank`, `jml_uang`, `rekening`, `atas_nama`) VALUES
+(1, 'BNI', '60.001', '16108010022002', 'Ade totot');
 
 -- --------------------------------------------------------
 

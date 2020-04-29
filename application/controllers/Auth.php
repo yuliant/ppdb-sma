@@ -10,6 +10,7 @@ class Auth extends CI_Controller
         parent::__construct();
         $this->load->model('Auth_m');
         $this->load->library('form_validation');
+        $this->load->model('admin/env/Agenda_m', 'Agenda_m');
     }
 
     public function index()
@@ -22,6 +23,12 @@ class Auth extends CI_Controller
         $this->form_validation->set_message('required', '%s masih kosong, silahkan diisi');
         if ($this->form_validation->run() == false) {
             $data['tittle'] = "Login | PPDB Smagrisda";
+
+            $this->load->model('admin/env/Kontakadmin_m', 'Kontakadmin_m');
+
+            $data['env_agenda'] = $this->Agenda_m->getAgenda()->row();
+            $data['env_kontak'] = $this->Kontakadmin_m->getKontak()->row();
+
             $this->load->view('auth/login', $data);
         } else {
             $this->_proses();
@@ -32,29 +39,38 @@ class Auth extends CI_Controller
     {
         $post = $this->input->post(null, TRUE);
         if (isset($post['login'])) {
+
             $query = $this->Auth_m->login($post);
-
             if ($query->num_rows() > 0) {
-                $row = $query->row();
-                if ($row->is_active == 1) {
-                    if (password_verify(htmlspecialchars($this->input->post('password'), true), $row->password)) {
-                        $params = array(
-                            'user_id' => $row->user_id,
-                            'level' => $row->level
-                        );
-                        $this->session->set_userdata($params);
 
-                        if ($this->fungsi->user_login()->level == 1) {
-                            redirect('admindashboard');
+                $cek_aktif = $this->Agenda_m->getAgenda()->row()->aktif;
+                $row = $query->row();
+                if ($cek_aktif == 1 || $row->level == 1) {
+
+                    if ($row->is_active == 1) {
+
+                        if (password_verify(htmlspecialchars($this->input->post('password'), true), $row->password)) {
+                            $params = array(
+                                'user_id' => $row->user_id,
+                                'level' => $row->level
+                            );
+                            $this->session->set_userdata($params);
+
+                            if ($this->fungsi->user_login()->level == 1) {
+                                redirect('admindashboard');
+                            } else {
+                                redirect('dashboard');
+                            }
                         } else {
-                            redirect('dashboard');
+                            $this->session->set_flashdata('message', '<div class="alert alert-danger" role="alert">Password salah</div>');
+                            redirect('auth');
                         }
                     } else {
-                        $this->session->set_flashdata('message', '<div class="alert alert-danger" role="alert">Password salah</div>');
+                        $this->session->set_flashdata('message', '<div class="alert alert-danger" role="alert">Login gagal, akun anda belum aktif</div>');
                         redirect('auth');
                     }
                 } else {
-                    $this->session->set_flashdata('message', '<div class="alert alert-danger" role="alert">Login gagal, akun anda belum aktif</div>');
+                    $this->session->set_flashdata('message', '<div class="alert alert-danger" role="alert">Login gagal, pendaftaran belum dibuka</div>');
                     redirect('auth');
                 }
             } else {
@@ -78,32 +94,38 @@ class Auth extends CI_Controller
     {
         check_already_login();
 
-        $this->form_validation->set_rules("name", "Nama Lengkap", "required|trim");
-        $this->form_validation->set_rules("username", "Username", "required|trim|min_length[5]|is_unique[user.username]|callback_customAlpha", [
-            'is_unique' => 'Username ini sudah dipakai, silahkan diganti',
-            'min_length' => 'Username minimal 5 karakter'
-        ]);
-        $this->form_validation->set_rules("password1", "Password", "required|trim|min_length[6]|matches[password2]", [
-            'matches' => 'Password tidak sama!',
-            'min_length' => 'Password minimal 6 karakter'
-        ]);
-        $this->form_validation->set_rules("password2", "Konfirmasi Password", "required|trim|min_length[6]|matches[password1]", [
-            'matches' => 'Password tidak sama!',
-            'min_length' => 'Password minimal 6 karakter'
-        ]);
+        $cek_aktif = $this->Agenda_m->getAgenda()->row()->aktif;
+        if ($cek_aktif == 1) {
+            $this->form_validation->set_rules("name", "Nama Lengkap", "required|trim");
+            $this->form_validation->set_rules("username", "Username", "required|trim|min_length[5]|is_unique[user.username]|callback_customAlpha", [
+                'is_unique' => 'Username ini sudah dipakai, silahkan diganti',
+                'min_length' => 'Username minimal 5 karakter'
+            ]);
+            $this->form_validation->set_rules("password1", "Password", "required|trim|min_length[6]|matches[password2]", [
+                'matches' => 'Password tidak sama!',
+                'min_length' => 'Password minimal 6 karakter'
+            ]);
+            $this->form_validation->set_rules("password2", "Konfirmasi Password", "required|trim|min_length[6]|matches[password1]", [
+                'matches' => 'Password tidak sama!',
+                'min_length' => 'Password minimal 6 karakter'
+            ]);
 
-        //message
-        $this->form_validation->set_message('customAlpha', 'Selain huruf dan angka, spasi atau karakter lain tidak diperbolehkan');
-        $this->form_validation->set_message('required', '%s masih kosong, silahkan diisi');
+            //message
+            $this->form_validation->set_message('customAlpha', 'Selain huruf dan angka, spasi atau karakter lain tidak diperbolehkan');
+            $this->form_validation->set_message('required', '%s masih kosong, silahkan diisi');
 
-        if ($this->form_validation->run() == false) {
-            $data['tittle'] = "Registration | PPDB Smagrisda";
-            $this->load->view('auth/register', $data);
+            if ($this->form_validation->run() == false) {
+                $data['tittle'] = "Registration | PPDB Smagrisda";
+                $this->load->view('auth/register', $data);
+            } else {
+                $post = $this->input->post(null, TRUE);
+                $this->Auth_m->registration($post);
+
+                $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">Selamat! akun anda berhasil dibuat. Silahkan login</div>');
+                redirect('auth');
+            }
         } else {
-            $post = $this->input->post(null, TRUE);
-            $this->Auth_m->registration($post);
-
-            $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">Selamat! akun anda berhasil dibuat. Silahkan login</div>');
+            $this->session->set_flashdata('message', '<div class="alert alert-danger" role="alert">Anda tidak bisa membuat akun, pendaftaran belum dibuka</div>');
             redirect('auth');
         }
     }

@@ -57,6 +57,41 @@ class Showuser_m extends CI_Model
         $this->db->where('user_id', $post['user_id']);
         $this->db->delete('user');
     }
+    public function deleteUserDaftar($post)
+    {
+        $this->db->where('id_user', $post['user_id']);
+        $this->db->delete('user_daftar');
+    }
+
+    public function deleteDatadiri($post)
+    {
+        $this->db->where('id_user', $post['user_id']);
+        $this->db->delete('data_diri_pribadi');
+    }
+
+    public function deleteDatasekolah($post)
+    {
+        $this->db->where('id_user', $post['user_id']);
+        $this->db->delete('data_diri_sekolah');
+    }
+
+    public function deleteDataortu($post)
+    {
+        $this->db->where('id_user', $post['user_id']);
+        $this->db->delete('data_ortu');
+    }
+
+    public function deleteDataberkas($post)
+    {
+        $this->db->where('id_user', $post['user_id']);
+        $this->db->delete('data_berkas');
+    }
+
+    public function deleteDataqrcode($post)
+    {
+        $this->db->where('id_user', $post['user_id']);
+        $this->db->delete('data_qrcode');
+    }
 }
 
 /* End of file Showuser_m.php */

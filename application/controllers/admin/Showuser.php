@@ -91,10 +91,16 @@ class Showuser extends CI_Controller
             $this->_deleteFolder($path);
 
             //message successful delete
-            $this->session->set_flashdata('message', '<div class="alert alert-danger" role="alert">User dan datanya atas nama ' . $data_user->nama . ' berhasil dihapus</div>');
+            $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">User dan datanya atas nama <b>' . $data_user->nama . '</b> berhasil dihapus</div>');
 
             //delete process
             $this->Showuser_m->deleteUser($post);
+            $this->Showuser_m->deleteUserDaftar($post);
+            $this->Showuser_m->deleteDatadiri($post);
+            $this->Showuser_m->deleteDatasekolah($post);
+            $this->Showuser_m->deleteDataortu($post);
+            $this->Showuser_m->deleteDataberkas($post);
+            $this->Showuser_m->deleteDataqrcode($post);
             redirect('showuser');
         } else {
             redirect('showuser');
@@ -103,6 +109,9 @@ class Showuser extends CI_Controller
 
     private function _deleteFolder($path)
     {
+        // if ($path == './assets/data/' . $data_user->username) {
+        // }else{
+        // }
         if (is_dir($path) === true) {
             $files = new RecursiveIteratorIterator(new RecursiveDirectoryIterator($path), RecursiveIteratorIterator::CHILD_FIRST);
 

@@ -34,7 +34,11 @@
                         </div>
                         <div class="activity-detail">
                             <span class="text-job text-primary">BAYAR FORMULIR</span>
-                            <p>Silahkan transfer Rp 50.000,- ke rekening BNI 16108010022000 atas nama Ade setya. Kemudian foto <b>BUKTI TRANSFER PEMBAYARAN</b>.</p>
+                            <p>Silahkan transfer Rp <?php echo $env_pembayaran->jml_uang ?>
+                                ,- ke rekening <?php echo $env_pembayaran->nama_bank ?>
+                                <?php echo $env_pembayaran->rekening ?>
+                                atas nama <?php echo $env_pembayaran->atas_nama ?>.
+                                Kemudian foto <b>BUKTI TRANSFER PEMBAYARAN</b>.</p>
                         </div>
                     </div>
                     <div class="activity">
@@ -52,7 +56,7 @@
                         </div>
                         <div class="activity-detail">
                             <span class="text-job text-primary">ISI FORMULIR</span>
-                            <p>Tekan ikon garis 3 di pojok kiri atas, pilih menu <b>FORMULIR</b>. Isi secara berurutan mulai dari data diri siswa, data orang tua, dan kelengkapan berkas.</p>
+                            <p>Tekan ikon garis 3 di pojok kiri atas, pilih menu <a href="<?php echo base_url('formulir') ?>"><b>FORMULIR</b></a>. Isi secara berurutan mulai dari data diri siswa, data orang tua, dan kelengkapan berkas.</p>
                         </div>
                     </div>
                     <div class="activity">

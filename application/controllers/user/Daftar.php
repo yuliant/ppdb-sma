@@ -10,11 +10,14 @@ class Daftar extends CI_Controller
         check_not_login();
         $this->load->library('form_validation');
         $this->load->model('user/Daftar_m', 'Daftar_m');
+        $this->load->model('admin/env/Pembayaran_m', 'Pembayaran_m');
     }
 
     public function index()
     {
         $data['tittle'] = "Daftar";
+        $data['env_pembayaran'] = $this->Pembayaran_m->getPembayaran()->row();
+        $data['modal'] = $this->load->view('temp_modal_panduan', $data, TRUE);
 
         $id = $this->fungsi->user_login()->user_id;
         $cekdaftar = $this->Daftar_m->getDaftar($id);

@@ -125,22 +125,22 @@ $user = $this->fungsi->user_login();
                         <?php if ($user->level == 1) { ?>
                             <li class="dropdown 
                             <?php echo $this->uri->segment(1) == 'pembayaran'
-                                || $this->uri->segment(1) == 'Agenda'
-                                || $this->uri->segment(1) == 'kontak admin' ? 'active' : '' ?>">
+                                || $this->uri->segment(1) == 'agenda'
+                                || $this->uri->segment(1) == 'kontakadmin' ? 'active' : '' ?>">
                                 <a href="" class="nav-link has-dropdown">
                                     <i class="fas fa-desktop"></i> <span>Environment</span>
                                 </a>
                                 <ul class="dropdown-menu">
                                     <li <?php echo $this->uri->segment(1) == 'pembayaran' ? 'class="active"' : '' ?>>
-                                        <a href="<?php echo "#" //base_url('pembayaran') 
+                                        <a href="<?php echo base_url('pembayaran')
                                                     ?>">Pembayaran</a>
                                     </li>
-                                    <li <?php echo $this->uri->segment(1) == 'Agenda' ? 'class="active"' : '' ?>>
-                                        <a href="<?php echo "#" //base_url('Agenda') 
+                                    <li <?php echo $this->uri->segment(1) == 'agenda' ? 'class="active"' : '' ?>>
+                                        <a href="<?php echo base_url('agenda')
                                                     ?>">Agenda</a>
                                     </li>
-                                    <li <?php echo $this->uri->segment(1) == 'kontak admin' ? 'class="active"' : '' ?>>
-                                        <a href="<?php echo "#" //base_url('kontak admin') 
+                                    <li <?php echo $this->uri->segment(1) == 'kontakadmin' ? 'class="active"' : '' ?>>
+                                        <a href="<?php echo base_url('kontakadmin')
                                                     ?>">Kontak Admin</a>
                                     </li>
                                 </ul>
@@ -207,6 +207,28 @@ $user = $this->fungsi->user_login();
             let fileName = $(this).val().split('\\').pop();
             $(this).next('.custom-file-label').addClass("selected").html(fileName);
         });
+    </script>
+
+    <!-- set logout selama 20 menit -->
+    <script>
+        let log_off = new Date();
+        log_off.setSeconds(log_off.getSeconds() + 1200);
+        log_off = new Date(log_off);
+
+        let int_logoff = setInterval(function() {
+            let now = new Date();
+            if (now > log_off) {
+                window.location.assign("<?= base_url('auth/logout') ?>");
+                clearInterval(int_logoff);
+            }
+        }, 1200000);
+
+        $('body').on('click', function() {
+            log_off = new Date();
+            log_off.setSeconds(log_off.getSeconds() + 1200);
+            log_off = new Date(log_off);
+            console.log(log_off);
+        })
     </script>
 </body>
 

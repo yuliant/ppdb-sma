@@ -61,9 +61,13 @@ class Showformulir extends CI_Controller
 
     public function detail($id)
     {
-        $data['tittle'] = "Detail Formulir";
-        $data['show'] = $this->Formulir_m->getAllFormulir($id, null, null, null)->row();
-        $this->template->load('temp_dashboard', 'admin/showformulir/detail', $data);
+        if ($id == null) {
+            echo "User ini belum mengisi formulir secara lengkap " . "<a href=" . base_url('showformulir') . ">Kembali</a>";
+        } else {
+            $data['tittle'] = "Detail Formulir";
+            $data['show'] = $this->Formulir_m->getAllFormulir($id, null, null, null)->row();
+            $this->template->load('temp_dashboard', 'admin/showformulir/detail', $data);
+        }
     }
 }
 
