@@ -33,7 +33,7 @@ class Agenda extends CI_Controller
             $input_ft_dtr_ulang = null;
 
             if ($upload_ft_dtr_ulang) {
-                $config['allowed_types'] = 'jpg|png';
+                $config['allowed_types'] = 'jpg|png|jpeg';
                 $config['max_size']      = '1048';
                 $config['upload_path'] = './assets/data/';
 

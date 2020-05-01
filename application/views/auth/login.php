@@ -43,7 +43,7 @@
                                 <div class="p-5">
                                     <div class="text-center">
                                         <h4 class="h4 text-gray-900">Login</h4>
-                                        <p class="text-gray-900 mb-2">PPDB Smagrisda</p>
+                                        <p class="text-gray-900 mb-2">PPDB Smagrisda <?php echo $env_agenda->tapel ?></p>
                                     </div>
 
                                     <?php echo $this->session->flashdata('message'); ?>

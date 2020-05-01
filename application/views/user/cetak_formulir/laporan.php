@@ -14,8 +14,37 @@ if (!file_exists("./assets/data/$user->username/kode.png")) {
 
 $template = new \PhpOffice\PhpWord\TemplateProcessor('assets/data/formulir.docx');
 
-//set image
+//keterangan siswa
 $template->setValue('nama', $data_diri->nama);
+$template->setValue('tempat_lahir', $data_diri->tempat_lahir);
+$template->setValue('tanggal_lahir', $data_diri->tanggal_lahir);
+$template->setValue('agama', $data_diri->agama);
+$template->setValue('kelamin', $data_diri->kelamin);
+$template->setValue('alamat', $data_diri->alamat);
+
+//keterangan sekolah
+$template->setValue('nisn', $data_sekolah->nisn);
+$template->setValue('asal_sekolah', $data_sekolah->asal_sekolah);
+$template->setValue('tahun_lulus', $data_sekolah->tahun_lulus);
+$template->setValue('no_ijasah', $data_sekolah->no_ijasah);
+
+//keterangan orang tua
+$template->setValue('nama_ortu', $data_ortu->nama_ortu);
+$template->setValue('pekerjaan', $data_ortu->pekerjaan);
+$template->setValue('telp_ortu', $data_ortu->telp_ortu);
+$template->setValue('alamat_ortu', $data_ortu->alamat_ortu);
+
+//keterangan nilai ujian
+$template->setValue('nilai_indo', $berkas->nilai_indo);
+$template->setValue('nilai_ing', $berkas->nilai_ing);
+$template->setValue('matematika', $berkas->matematika);
+$template->setValue('ipa', $berkas->ipa);
+$template->setValue('tanggal_dibuat', date("d-m-Y", strtotime($berkas->berkas_created)));
+
+//keterangan tapel
+$template->setValue('tapel', $env_agenda->tapel);
+
+//set image
 $template->setImage('image1.jpg', "assets/data/$user->username/kode.png");
 $template->saveAs('assets/data/' . $data_diri->username . '/FORMULIR ' . $data_diri->nama . '.docx');
 header("Content-Type:application/msword");

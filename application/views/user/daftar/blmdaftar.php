@@ -15,7 +15,7 @@
                             </div>
                             <h2>Anda belum membayar formulir pendaftaran</h2>
                             <p class="lead">
-                                Silahkan transfer Rp 50.000,- ke rekening BNI <b>16108010022000</b> atas nama Ade setya. Kemudian upload foto <b>BUKTI TRANSFER PEMBAYARAN</b> dengan menekan tombol "Sudah bayar" di bawah ini.
+                                Silahkan transfer Rp <?= $env_pembayaran->jml_uang ?>,- ke rekening <?= $env_pembayaran->nama_bank ?> <b><?= $env_pembayaran->rekening ?></b> atas nama <?= $env_pembayaran->atas_nama ?>. Kemudian upload foto <b>BUKTI TRANSFER PEMBAYARAN</b> dengan tekan "Sudah bayar" di bawah ini.
                             </p>
                             <a href="<?php echo base_url('daftar/bayarformulir') ?>" class="btn btn-primary mt-4">Sudah Bayar</a>
                             <a href="#" data-toggle="modal" data-target="#logoutModal" class="mt-4 bb">Butuh bantuan?</a>

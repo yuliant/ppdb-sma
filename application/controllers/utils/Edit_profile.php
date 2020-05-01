@@ -37,7 +37,7 @@ class Edit_profile extends CI_Controller
             $username = $data['user']->username;
 
             if ($upload_image) {
-                $config['allowed_types'] = 'gif|jpg|png';
+                $config['allowed_types'] = 'gif|jpg|png|jpeg';
                 $config['max_size']      = '1048';
                 $config['upload_path'] = './assets/data/' . $username;
 

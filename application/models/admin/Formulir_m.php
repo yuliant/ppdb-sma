@@ -24,7 +24,7 @@ class Formulir_m extends CI_Model
             $this->db->limit($limit, $start);
         }
 
-        $this->db->order_by('data_berkas.berkas_created', 'desc');
+        $this->db->order_by('data_berkas.berkas_created', 'asc');
         $query = $this->db->get();
         return $query;
     }

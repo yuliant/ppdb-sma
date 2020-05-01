@@ -3,6 +3,14 @@ UPDATE NOTE
 *******************
 
 *******************
+Version 0.2.2 (Release) 30 April 2020
+*******************
+* Perubahan pada database, silahkan import kembali.
+* Pembaruan pada file formulir.
+* sudah menerapkan relation pada fitur hapus data.
+* Optimalisasi pada website.
+
+*******************
 Version 0.2.1 (beta) 29 April 2020
 *******************
 * Perubahan pada database, silahkan import kembali.

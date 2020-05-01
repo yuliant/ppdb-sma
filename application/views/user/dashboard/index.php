@@ -65,7 +65,7 @@
                         </div>
                         <div class="activity-detail">
                             <span class="text-job text-primary">CETAK FORMULIR</span>
-                            <p>Tekan ikon garis 3 di pojok kiri atas, pilih menu <a href="#"><b>CETAK FORMULIR</b></a>. Pastikan anda sudah mengisi formulir dengan data yang sesuai.</p>
+                            <p>Tekan ikon garis 3 di pojok kiri atas, pilih menu <a href="<?php echo base_url('cetakformulir') ?>"><b>CETAK FORMULIR</b></a>. Pastikan anda sudah mengisi formulir dengan data yang sesuai.</p>
                         </div>
                     </div>
                     <div class="activity">

@@ -48,7 +48,7 @@
                             ?>
                                 <tr>
                                     <td><?php echo ++$start ?></td>
-                                    <td><a href="<?php echo base_url('showuser/detail/') . $data->id_user ?>"><?php echo $data->nama ?></a></td>
+                                    <td><a href="<?php echo base_url('showformulir/detail/') . $data->id_user ?>"><?php echo $data->nama ?></a></td>
                                     <td><?php echo $data->username ?></td>
                                     <td>
                                         <?php echo date("d-m-Y", strtotime($data->berkas_created)) ?>
