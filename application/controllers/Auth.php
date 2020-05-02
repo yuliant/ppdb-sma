@@ -118,10 +118,35 @@ class Auth extends CI_Controller
                 $data['tittle'] = "Registration | PPDB Smagrisda";
                 $this->load->view('auth/register', $data);
             } else {
-                $post = $this->input->post(null, TRUE);
-                $this->Auth_m->registration($post);
 
-                $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">Selamat! akun anda berhasil dibuat. Silahkan login</div>');
+                $recaptchaResponse = trim($this->input->post('g-recaptcha-response'));
+                $userIp = $this->input->ip_address();
+                $secret = '6LcUNfEUAAAAAPSfUNjiqzwa6_KuN0nO0wq1pmHR';
+
+                $credential = array(
+                    'secret' => $secret,
+                    'response' => $this->input->post('g-recaptcha-response')
+                );
+
+                $verify = curl_init();
+                curl_setopt($verify, CURLOPT_URL, "https://www.google.com/recaptcha/api/siteverify");
+                curl_setopt($verify, CURLOPT_POST, true);
+                curl_setopt($verify, CURLOPT_POSTFIELDS, http_build_query($credential));
+                curl_setopt($verify, CURLOPT_SSL_VERIFYPEER, false);
+                curl_setopt($verify, CURLOPT_RETURNTRANSFER, true);
+                $response = curl_exec($verify);
+
+                $status = json_decode($response, true);
+
+                if ($status['success']) {
+                    $post = $this->input->post(null, TRUE);
+                    $this->Auth_m->registration($post);
+
+                    $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">Selamat! akun anda berhasil dibuat. Silahkan login</div>');
+                } else {
+                    $this->session->set_flashdata('message', '<div class="alert alert-danger" role="alert">Verifikasi recaptcha anda tidak berhasil</div>');
+                    redirect('auth/registration');
+                }
                 redirect('auth');
             }
         } else {

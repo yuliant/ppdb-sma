@@ -3,6 +3,12 @@ UPDATE NOTE
 *******************
 
 *******************
+Version 0.2.3 (Release) 02 Mei 2020
+*******************
+* Perubahan pada database, silahkan import kembali.
+* Menambahkan google reCAPTCHA pada halaman registration.
+
+*******************
 Version 0.2.2 (Release) 30 April 2020
 *******************
 * Perubahan pada database, silahkan import kembali.

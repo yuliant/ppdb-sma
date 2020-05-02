@@ -185,7 +185,7 @@ CREATE TABLE `user` (
 --
 
 INSERT INTO `user` (`user_id`, `nama`, `username`, `password`, `image`, `level`, `is_active`, `date_created`) VALUES
-(1, 'admin', 'admin', '$2y$10$Q6WhX7NjGHD6Kt0kfb/GxOcNcoWMID8QyvxqYwuwMF7MIUoWhiqNy', 'admin/neko_cibi.jpg', 1, 1, '2020-04-02 18:33:34');
+(1, 'admin', 'admin', '$2y$10$Q6WhX7NjGHD6Kt0kfb/GxOcNcoWMID8QyvxqYwuwMF7MIUoWhiqNy', 'admin/shipit.jpg', 1, 1, '2020-04-02 18:33:34');
 
 -- --------------------------------------------------------
 
