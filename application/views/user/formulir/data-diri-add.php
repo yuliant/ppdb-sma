@@ -44,7 +44,7 @@
                             <div class="form-group row align-items-center">
                                 <label for="tempat_lahir" class="form-control-label col-sm-3 text-md-right">Tempat Lahir*</label>
                                 <div class="col-sm-6 col-md-9">
-                                    <input type="text" name="tempat_lahir" class="form-control" id="tempat_lahir" required>
+                                    <input type="text" name="tempat_lahir" class="form-control" id="tempat_lahir" value="<?php echo set_value('tempat_lahir'); ?>" required>
                                     <?php echo form_error('tempat_lahir', '<small class="text-danger pl-3">', '</small>'); ?>
                                 </div>
                             </div>
@@ -52,7 +52,7 @@
                             <div class="form-group row align-items-center">
                                 <label for="tgl_lahir" class="form-control-label col-sm-3 text-md-right">Tanggal Lahir*</label>
                                 <div class="col-sm-6 col-md-9">
-                                    <input type="date" name="tgl_lahir" class="form-control" id="tgl_lahir" required>
+                                    <input type="date" name="tgl_lahir" class="form-control" id="tgl_lahir" value="<?php echo set_value('tgl_lahir'); ?>" required>
                                     <?php echo form_error('tgl_lahir', '<small class="text-danger pl-3">', '</small>'); ?>
                                 </div>
                             </div>
@@ -96,7 +96,7 @@
                             <div class="form-group row align-items-center">
                                 <label for="asal_sekolah" class="form-control-label col-sm-3 text-md-right">Asal Sekolah*</label>
                                 <div class="col-sm-6 col-md-9">
-                                    <input type="text" name="asal_sekolah" class="form-control" id="asal_sekolah" placeholder="Contoh: SMP x ..." required>
+                                    <input type="text" name="asal_sekolah" class="form-control" id="asal_sekolah" placeholder="Contoh: SMP x ..." value="<?php echo set_value('asal_sekolah'); ?>" required>
                                     <?php echo form_error('asal_sekolah', '<small class="text-danger pl-3">', '</small>'); ?>
                                 </div>
                             </div>
@@ -104,7 +104,7 @@
                             <div class="form-group row align-items-center">
                                 <label for="nisn" class="form-control-label col-sm-3 text-md-right">NISN*</label>
                                 <div class="col-sm-6 col-md-9">
-                                    <input type="number" name="nisn" class="form-control" id="nisn" required>
+                                    <input type="number" name="nisn" class="form-control" id="nisn" value="<?php echo set_value('nisn'); ?>" required>
                                     <?php echo form_error('nisn', '<small class="text-danger pl-3">', '</small>'); ?>
                                 </div>
                             </div>
@@ -112,16 +112,8 @@
                             <div class="form-group row align-items-center">
                                 <label for="thn_lulus" class="form-control-label col-sm-3 text-md-right">Tahun lulus*</label>
                                 <div class="col-sm-6 col-md-9">
-                                    <input type="number" name="thn_lulus" class="form-control" id="thn_lulus" placeholder="Contoh: 2016" required>
+                                    <input type="number" name="thn_lulus" class="form-control" id="thn_lulus" placeholder="Contoh: 2016" value="<?php echo set_value('thn_lulus'); ?>" required>
                                     <?php echo form_error('thn_lulus', '<small class="text-danger pl-3">', '</small>'); ?>
-                                </div>
-                            </div>
-
-                            <div class="form-group row align-items-center">
-                                <label for="no_ijasah" class="form-control-label col-sm-3 text-md-right">Nomor Ijasah*</label>
-                                <div class="col-sm-6 col-md-9">
-                                    <input type="number" name="no_ijasah" class="form-control" id="no_ijasah" required>
-                                    <?php echo form_error('no_ijasah', '<small class="text-danger pl-3">', '</small>'); ?>
                                 </div>
                             </div>
 

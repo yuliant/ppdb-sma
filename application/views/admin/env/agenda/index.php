@@ -40,7 +40,25 @@
                             <div class="custom-file">
                                 <input type="file" class="custom-file-input" id="foto_daftar_ulang" name="foto_daftar_ulang">
                                 <label class="custom-file-label" for="foto_daftar_ulang">Choose file</label>
-                                <small>Maximal 1 mb</small>
+                                <small>Maximal <?php echo substr($this->config->item('max_du'), 0, -3) ?> Mb</small>
+                            </div>
+                        </div>
+                    </div>
+
+                    <label>Foto background Login</label>
+                    <div class="row form-group">
+                        <div class="col-sm-3">
+                            <a href="<?php echo base_url('assets/data/') . $env_agenda->foto_bg; ?>">
+                                <img src="<?php echo base_url('assets/data/') .
+                                                $env_agenda->foto_bg; ?>" class="img-thumbnail">
+                            </a>
+                        </div>
+                        <div class="col-sm-9">
+                            <div class="custom-file">
+                                <input type="file" class="custom-file-input" id="foto_bg" name="foto_bg">
+                                <label class="custom-file-label" for="foto_bg">Choose file</label>
+                                <small>Maximal <?php echo substr($this->config->item('max_du'), 0, -3) ?> Mb</small>
+                                <small> | Dimensi 400x560 px</small>
                             </div>
                         </div>
                     </div>

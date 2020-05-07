@@ -122,13 +122,6 @@
                                     </div>
                                 </div>
 
-                                <div class="form-group row align-items-center">
-                                    <label class="form-control-label col-sm-3 text-md-right">Nomor Ijasah</label>
-                                    <div class="col-lg-9 col-md-12">
-                                        <input class="form-control" value="<?php echo $show->no_ijasah ?>" readonly>
-                                    </div>
-                                </div>
-
                             </div>
                         </div>
                         <div class="accordion">
@@ -174,35 +167,35 @@
                             <div class="accordion-body collapse" id="panel-body-3" data-parent="#accordion">
 
                                 <div class="form-group row align-items-center">
-                                    <label class="form-control-label col-sm-3 text-md-right">Nilai Bahasa Indonesia</label>
+                                    <label class="form-control-label col-sm-3 text-md-right">Nilai Mapel Bahasa Indonesia</label>
                                     <div class="col-lg-9 col-md-12">
                                         <input class="form-control" value="<?php echo $show->nilai_indo ?>" readonly>
                                     </div>
                                 </div>
 
                                 <div class="form-group row align-items-center">
-                                    <label class="form-control-label col-sm-3 text-md-right">Nilai Bahasa Inggris</label>
+                                    <label class="form-control-label col-sm-3 text-md-right">Nilai Mapel Bahasa Inggris</label>
                                     <div class="col-lg-9 col-md-12">
                                         <input class="form-control" value="<?php echo $show->nilai_ing ?>" readonly>
                                     </div>
                                 </div>
 
                                 <div class="form-group row align-items-center">
-                                    <label class="form-control-label col-sm-3 text-md-right">Nilai Matematika</label>
+                                    <label class="form-control-label col-sm-3 text-md-right">Nilai Mapel Matematika</label>
                                     <div class="col-lg-9 col-md-12">
                                         <input class="form-control" value="<?php echo $show->matematika ?>" readonly>
                                     </div>
                                 </div>
 
                                 <div class="form-group row align-items-center">
-                                    <label class="form-control-label col-sm-3 text-md-right">Nilai IPA</label>
+                                    <label class="form-control-label col-sm-3 text-md-right">Nilai Mapel IPA</label>
                                     <div class="col-lg-9 col-md-12">
                                         <input class="form-control" value="<?php echo $show->ipa ?>" readonly>
                                     </div>
                                 </div>
 
                                 <div class="form-group row align-items-center">
-                                    <label class="form-control-label col-sm-3 text-md-right">Foto Ijasah SMP</label>
+                                    <label class="form-control-label col-sm-3 text-md-right">Foto SKL / Ijasah SMP</label>
                                     <div class="col-lg-9 col-md-12">
                                         <div class="col-lg-4">
                                             <a href="<?php echo base_url('assets/data/') . $show->foto_ijasah_smp; ?>">
@@ -213,7 +206,7 @@
                                 </div>
 
                                 <div class="form-group row align-items-center">
-                                    <label class="form-control-label col-sm-3 text-md-right">Foto SHUN</label>
+                                    <label class="form-control-label col-sm-3 text-md-right">Foto Kartu Keluarga</label>
                                     <div class="col-lg-9 col-md-12">
                                         <div class="col-sm-4">
                                             <a href="<?php echo base_url('assets/data/') . $show->foto_shun; ?>">

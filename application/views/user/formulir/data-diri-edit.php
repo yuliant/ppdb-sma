@@ -83,12 +83,6 @@
                             <?php echo form_error('thn_lulus', '<small class="text-danger pl-3">', '</small>'); ?>
                         </div>
 
-                        <label>Nomor Ijasah*</label>
-                        <div class="form-group">
-                            <input type="number" name="no_ijasah" class="form-control" id="no_ijasah" value="<?php echo $data_diri_sekolah->no_ijasah; ?>" required>
-                            <?php echo form_error('no_ijasah', '<small class="text-danger pl-3">', '</small>'); ?>
-                        </div>
-
                         <div class="card-footer text-right">
                             <button class="btn btn-primary mr-1" type="submit">Save</button>
                             <a href="<?php echo base_url('formulir') ?>" class="btn btn-light">Cancel</a>

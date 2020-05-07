@@ -18,31 +18,31 @@
                 <div class="card-body">
                     <?php echo form_open_multipart('formulir/editberkas'); ?>
 
-                    <label>Nilai Bahasa Indonesia*</label>
+                    <label>Nilai Mapel Bahasa Indonesia*</label>
                     <div class="form-group">
                         <input type="number" name="nilai_indo" class="form-control" id="nilai_indo" value="<?php echo $data_berkas->nilai_indo ?>" required>
                         <?php echo form_error('nilai_indo', '<small class="text-danger pl-3">', '</small>'); ?>
                     </div>
 
-                    <label>Nilai Bahasa Inggris*</label>
+                    <label>Nilai Mapel Bahasa Inggris*</label>
                     <div class="form-group">
                         <input type="number" name="nilai_ing" class="form-control" id="nilai_ing" value="<?php echo $data_berkas->nilai_ing ?>" required>
                         <?php echo form_error('nilai_ing', '<small class="text-danger pl-3">', '</small>'); ?>
                     </div>
 
-                    <label>Nilai Matematika*</label>
+                    <label>Nilai Mapel Matematika*</label>
                     <div class="form-group">
                         <input type="number" name="matematika" class="form-control" id="matematika" value="<?php echo $data_berkas->matematika ?>" required>
                         <?php echo form_error('matematika', '<small class="text-danger pl-3">', '</small>'); ?>
                     </div>
 
-                    <label>Nilai Ipa*</label>
+                    <label>Nilai Mapel Ipa*</label>
                     <div class="form-group">
                         <input type="number" name="ipa" class="form-control" id="ipa" value="<?php echo $data_berkas->ipa ?>" required>
                         <?php echo form_error('ipa', '<small class="text-danger pl-3">', '</small>'); ?>
                     </div>
 
-                    <label>Foto Ijasah / SKL SMP</label>
+                    <label>Foto SKL / Ijasah SMP</label>
                     <div class="row form-group">
                         <div class="col-sm-3">
                             <a href="<?php echo base_url('assets/data/') . $data_berkas->foto_ijasah_smp; ?>">
@@ -52,13 +52,13 @@
                         <div class="col-sm-9">
                             <div class="custom-file">
                                 <input type="file" class="custom-file-input" name="foto_ijasah_smp" id="foto_ijasah_smp">
-                                <label class="custom-file-label" for="foto_ijasah_smp">Upload Foto Ijasah</label>
-                                <small>Maximal 1 mb</small>
+                                <label class="custom-file-label" for="foto_ijasah_smp">Upload Foto SKL/Ijasah</label>
+                                <small>Maximal <?php echo substr($this->config->item('max_gambar'), 0, -3) ?> Mb</small>
                             </div>
                         </div>
                     </div>
 
-                    <label>Foto SHUN</label>
+                    <label>Foto Kartu Keluarga</label>
                     <div class="row form-group">
                         <div class="col-sm-3">
                             <a href="<?php echo base_url('assets/data/') . $data_berkas->foto_shun; ?>">
@@ -68,8 +68,8 @@
                         <div class="col-sm-9">
                             <div class="custom-file">
                                 <input type="file" class="custom-file-input" name="foto_shun" id="foto_shun">
-                                <label class="custom-file-label" for="foto_shun">Upload Foto SHUN</label>
-                                <small>Maximal 1 mb</small>
+                                <label class="custom-file-label" for="foto_shun">Upload Foto Kartu Keluarga</label>
+                                <small>Maximal <?php echo substr($this->config->item('max_gambar'), 0, -3) ?> Mb</small>
                             </div>
                         </div>
                     </div>

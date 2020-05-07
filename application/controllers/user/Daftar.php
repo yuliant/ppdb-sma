@@ -12,6 +12,7 @@ class Daftar extends CI_Controller
         $this->load->library('form_validation');
         $this->load->model('user/Daftar_m', 'Daftar_m');
         $this->load->model('admin/env/Pembayaran_m', 'Pembayaran_m');
+        $this->load->config('foto');
     }
 
     public function index()
@@ -69,8 +70,8 @@ class Daftar extends CI_Controller
                 $username = $data['user']->username;
 
                 if ($upload_image) {
-                    $config['allowed_types'] = 'jpg|png|jpeg';
-                    $config['max_size']      = '1048';
+                    $config['allowed_types'] = $this->config->item('type_gambar');
+                    $config['max_size']      = $this->config->item('max_gambar');
                     $config['upload_path'] = './assets/data/' . $username;
 
                     if (!is_dir('./assets/data/' . $username)) {
@@ -129,8 +130,8 @@ class Daftar extends CI_Controller
                     $foto_pembayaran = null;
 
                     if ($upload_image) {
-                        $config['allowed_types'] = 'jpg|png|jpeg';
-                        $config['max_size']      = '1048';
+                        $config['allowed_types'] = $this->config->item('type_gambar');
+                        $config['max_size']      = $this->config->item('max_gambar');
                         $config['upload_path'] = './assets/data/' . $username;
 
                         if (!is_dir('./assets/data/' . $username)) {

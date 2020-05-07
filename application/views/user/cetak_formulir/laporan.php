@@ -26,7 +26,6 @@ $template->setValue('alamat', $data_diri->alamat);
 $template->setValue('nisn', $data_sekolah->nisn);
 $template->setValue('asal_sekolah', $data_sekolah->asal_sekolah);
 $template->setValue('tahun_lulus', $data_sekolah->tahun_lulus);
-$template->setValue('no_ijasah', $data_sekolah->no_ijasah);
 
 //keterangan orang tua
 $template->setValue('nama_ortu', $data_ortu->nama_ortu);
@@ -47,8 +46,5 @@ $template->setValue('tapel', $env_agenda->tapel);
 //set image
 $template->setImage('image1.jpg', "assets/data/$user->username/kode.png");
 $template->saveAs('assets/data/' . $data_diri->username . '/FORMULIR ' . $data_diri->nama . '.docx');
-header("Content-Type:application/msword");
-header("Expires: 0");
-header("Cache-Control: must-revalidate, post-check=0, pre-check=0");
-header("Content-Disposition: attachment;filename=FORMULIR " . $data_diri->nama . ".docx");
-readfile('assets/data/' . $data_diri->username . '/FORMULIR ' . $data_diri->nama . '.docx');
+
+echo "<h2>Download data <a href='" . base_url('assets/data/') . $data_diri->username . '/' . '/FORMULIR ' . $data_diri->nama . '.docx' . "' target='_blank'>Disini</a>  |  <a href='" . base_url('cetakformulir') . "'>Kembali</a></h2>";

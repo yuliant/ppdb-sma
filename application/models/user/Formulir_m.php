@@ -81,7 +81,6 @@ class Formulir_m extends CI_Model
         $this->db->set('asal_sekolah', strtoupper(htmlspecialchars($post['asal_sekolah'], true)));
         $this->db->set('nisn', htmlspecialchars($post['nisn'], true));
         $this->db->set('tahun_lulus', htmlspecialchars($post['thn_lulus'], true));
-        $this->db->set('no_ijasah', htmlspecialchars($post['no_ijasah'], true));
         $this->db->insert('data_diri_sekolah');
     }
 
@@ -131,7 +130,6 @@ class Formulir_m extends CI_Model
         $this->db->set('asal_sekolah', strtoupper(htmlspecialchars($post['asal_sekolah'], true)));
         $this->db->set('nisn', htmlspecialchars($post['nisn'], true));
         $this->db->set('tahun_lulus', htmlspecialchars($post['thn_lulus'], true));
-        $this->db->set('no_ijasah', htmlspecialchars($post['no_ijasah'], true));
         $this->db->where('id_user', $id);
         $this->db->update('data_diri_sekolah');
     }

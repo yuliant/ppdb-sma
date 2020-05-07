@@ -12,6 +12,7 @@ class Formulir extends CI_Controller
         $this->load->library('form_validation');
         $this->load->model('user/Daftar_m', 'Daftar_m');
         $this->load->model('user/Formulir_m', 'Formulir_m');
+        $this->load->config('foto');
     }
 
     private function _random($n)
@@ -53,7 +54,6 @@ class Formulir extends CI_Controller
                     $this->form_validation->set_rules('asal_sekolah', 'Asal sekolah', 'required|trim|max_length[40]');
                     $this->form_validation->set_rules('nisn', 'NISN', 'required|trim|numeric|min_length[10]|max_length[10]');
                     $this->form_validation->set_rules('thn_lulus', 'Tahun lulus', 'required|trim|numeric|min_length[4]|max_length[4]');
-                    $this->form_validation->set_rules('no_ijasah', 'Nomor ijasah', 'required|trim|numeric|min_length[10]|max_length[40]');
 
                     //message
                     $this->form_validation->set_message('required', '%s masih kosong, silahkan diisi');
@@ -161,8 +161,8 @@ class Formulir extends CI_Controller
                         $username = $user->username;
 
                         if ($upload_ijasah && $upload_shun) {
-                            $config['allowed_types'] = 'jpg|png|jpeg';
-                            $config['max_size']      = '1048';
+                            $config['allowed_types'] = $this->config->item('type_gambar');
+                            $config['max_size']      = $this->config->item('max_gambar');
                             $config['upload_path'] = './assets/data/' . $username;
 
                             if (!is_dir('./assets/data/' . $username)) {
@@ -227,7 +227,6 @@ class Formulir extends CI_Controller
             $this->form_validation->set_rules('asal_sekolah', 'Asal sekolah', 'required|trim|max_length[40]');
             $this->form_validation->set_rules('nisn', 'NISN', 'required|trim|numeric|min_length[10]|max_length[10]');
             $this->form_validation->set_rules('thn_lulus', 'Tahun lulus', 'required|trim|numeric|min_length[4]|max_length[4]');
-            $this->form_validation->set_rules('no_ijasah', 'Nomor ijasah', 'required|trim|numeric|min_length[10]|max_length[40]');
 
             //message
             $this->form_validation->set_message('required', '%s masih kosong, silahkan diisi');
@@ -313,8 +312,8 @@ class Formulir extends CI_Controller
                 $input_shun = null;
 
                 if ($upload_ijasah) {
-                    $config['allowed_types'] = 'jpg|png|jpeg';
-                    $config['max_size']      = '1048';
+                    $config['allowed_types'] = $this->config->item('type_gambar');
+                    $config['max_size']      = $this->config->item('max_gambar');
                     $config['upload_path'] = './assets/data/' . $username;
 
                     if (!is_dir('./assets/data/' . $username)) {
@@ -337,8 +336,8 @@ class Formulir extends CI_Controller
                 }
 
                 if ($upload_shun) {
-                    $config['allowed_types'] = 'jpg|png';
-                    $config['max_size']      = '1048';
+                    $config['allowed_types'] = $this->config->item('type_gambar');
+                    $config['max_size']      = $this->config->item('max_gambar');
                     $config['upload_path'] = './assets/data/' . $username;
 
                     if (!is_dir('./assets/data/' . $username)) {

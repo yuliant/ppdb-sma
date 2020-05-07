@@ -25,7 +25,7 @@
                             </div>
                         </div>
                     </form>
-                    <small>Jumlah Data : <?php echo $total_rows . " (" . $keyword . ")" ?></small>
+                    <small>Jumlah Data : <?php echo $total_rows . " ,Filter (" . $keyword . ")" ?></small>
                 </div>
 
             </div>

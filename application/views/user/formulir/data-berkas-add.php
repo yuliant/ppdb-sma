@@ -35,56 +35,56 @@
                     <div class="card-body">
 
                         <div class="form-group row align-items-center">
-                            <label for="nilai_indo" class="form-control-label col-sm-3 text-md-right">Nilai Bahasa Indonesia*</label>
+                            <label for="nilai_indo" class="form-control-label col-sm-3 text-md-right">Nilai Mapel Bahasa Indonesia*</label>
                             <div class="col-sm-6 col-md-9">
-                                <input type="number" name="nilai_indo" class="form-control" id="nilai_indo" required>
+                                <input type="number" name="nilai_indo" class="form-control" id="nilai_indo" value="<?php echo set_value('nilai_indo'); ?>" required>
                                 <?php echo form_error('nilai_indo', '<small class="text-danger pl-3">', '</small>'); ?>
                             </div>
                         </div>
 
                         <div class="form-group row align-items-center">
-                            <label for="nilai_ing" class="form-control-label col-sm-3 text-md-right">Nilai Bahasa Inggris*</label>
+                            <label for="nilai_ing" class="form-control-label col-sm-3 text-md-right">Nilai Mapel Bahasa Inggris*</label>
                             <div class="col-sm-6 col-md-9">
-                                <input type="number" name="nilai_ing" class="form-control" id="nilai_ing" required>
+                                <input type="number" name="nilai_ing" class="form-control" id="nilai_ing" value="<?php echo set_value('nilai_ing'); ?>" required>
                                 <?php echo form_error('nilai_ing', '<small class="text-danger pl-3">', '</small>'); ?>
                             </div>
                         </div>
 
                         <div class="form-group row align-items-center">
-                            <label for="matematika" class="form-control-label col-sm-3 text-md-right">Nilai Matematika*</label>
+                            <label for="matematika" class="form-control-label col-sm-3 text-md-right">Nilai Mapel Matematika*</label>
                             <div class="col-sm-6 col-md-9">
-                                <input type="number" name="matematika" class="form-control" id="matematika" required>
+                                <input type="number" name="matematika" class="form-control" id="matematika" value="<?php echo set_value('matematika'); ?>" required>
                                 <?php echo form_error('matematika', '<small class="text-danger pl-3">', '</small>'); ?>
                             </div>
                         </div>
 
                         <div class="form-group row align-items-center">
-                            <label for="ipa" class="form-control-label col-sm-3 text-md-right">Nilai Ipa*</label>
+                            <label for="ipa" class="form-control-label col-sm-3 text-md-right">Nilai Mapel Ipa*</label>
                             <div class="col-sm-6 col-md-9">
-                                <input type="number" name="ipa" class="form-control" id="ipa" required>
+                                <input type="number" name="ipa" class="form-control" id="ipa" value="<?php echo set_value('ipa'); ?>" required>
                                 <?php echo form_error('ipa', '<small class="text-danger pl-3">', '</small>'); ?>
                             </div>
                         </div>
 
                         <div class="form-group row align-items-center">
-                            <label class="form-control-label col-sm-3 text-md-right">Foto Ijasah / SKL SMP*</label>
+                            <label class="form-control-label col-sm-3 text-md-right">Foto SKL / Ijasah SMP*</label>
                             <div class="col-sm-6 col-md-9">
                                 <div class="custom-file">
                                     <input type="file" class="custom-file-input" name="foto_ijasah_smp" id="foto_ijasah_smp">
-                                    <label class="custom-file-label" for="foto_ijasah_smp">Upload Foto Ijasah</label>
+                                    <label class="custom-file-label" for="foto_ijasah_smp">Upload Foto SKL/Ijasah</label>
                                 </div>
-                                <div class="form-text text-muted">Gambar yang di upload max 1 mb</div>
+                                <div class="form-text text-muted">Gambar yang di upload max <?php echo substr($this->config->item('max_gambar'), 0, -3) ?> Mb</div>
                             </div>
                         </div>
 
                         <div class="form-group row align-items-center">
-                            <label class="form-control-label col-sm-3 text-md-right">Foto SHUN*</label>
+                            <label class="form-control-label col-sm-3 text-md-right">Foto Kartu Keluarga*</label>
                             <div class="col-sm-6 col-md-9">
                                 <div class="custom-file">
                                     <input type="file" class="custom-file-input" name="foto_shun" id="foto_shun">
-                                    <label class="custom-file-label" for="foto_shun">Upload Foto SHUN</label>
+                                    <label class="custom-file-label" for="foto_shun">Upload Foto Kartu Keluarga</label>
                                 </div>
-                                <div class="form-text text-muted">Gambar yang di upload max 1 mb</div>
+                                <div class="form-text text-muted">Gambar yang di upload max <?php echo substr($this->config->item('max_gambar'), 0, -3) ?> Mb</div>
                             </div>
                         </div>
 

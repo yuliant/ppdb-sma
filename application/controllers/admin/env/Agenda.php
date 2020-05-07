@@ -11,6 +11,7 @@ class Agenda extends CI_Controller
         check_admin();
         $this->load->library('form_validation');
         $this->load->model('admin/env/Agenda_m', 'Agenda_m');
+        $this->load->config('foto');
     }
 
     public function index()
@@ -30,11 +31,13 @@ class Agenda extends CI_Controller
         } else {
 
             $upload_ft_dtr_ulang = $_FILES['foto_daftar_ulang']['name'];
+            $upload_ft_bg = $_FILES['foto_bg']['name'];
             $input_ft_dtr_ulang = null;
+            $input_ft_bg = null;
 
             if ($upload_ft_dtr_ulang) {
-                $config['allowed_types'] = 'jpg|png|jpeg';
-                $config['max_size']      = '1048';
+                $config['allowed_types'] = $this->config->item('type_du');
+                $config['max_size']      = $this->config->item('max_du');
                 $config['upload_path'] = './assets/data/';
 
                 $this->load->library('upload', $config);
@@ -53,8 +56,30 @@ class Agenda extends CI_Controller
                     redirect('agenda');
                 }
             }
+
+            if ($upload_ft_bg) {
+                $config['allowed_types'] = $this->config->item('type_du');
+                $config['max_size']      = $this->config->item('max_du');
+                $config['upload_path'] = './assets/data/';
+
+                $this->load->library('upload', $config);
+
+                if ($this->upload->do_upload('foto_bg')) {
+                    $old_image = $data['env_agenda']->foto_bg;
+
+                    if ($old_image != 'default.jpg') {
+                        unlink(FCPATH . 'assets/data/' . $old_image);
+                    }
+
+                    $file_ft_bg = $this->upload->data('file_name');
+                    $input_ft_bg = $file_ft_bg;
+                } else {
+                    $this->session->set_flashdata('message', '<div class="alert alert-danger" role="alert">' . $this->upload->display_errors() . '</div>');
+                    redirect('agenda');
+                }
+            }
             $post = $this->input->post(null, TRUE);
-            $this->Agenda_m->setAgenda($post, $input_ft_dtr_ulang);
+            $this->Agenda_m->setAgenda($post, $input_ft_dtr_ulang, $input_ft_bg);
             $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">Agenda berhasil di edit</div>');
             redirect('agenda');
         }

@@ -46,7 +46,7 @@
                             <div class="custom-file">
                                 <input type="file" class="custom-file-input" id="image" name="image">
                                 <label class="custom-file-label" for="image">Upload foto</label>
-                                <small>Maximal 1 mb</small>
+                                <small>Maximal <?php echo substr($this->config->item('max_gambar'), 0, -3) ?> Mb</small>
                             </div>
                         </div>
                     </div>

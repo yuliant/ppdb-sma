@@ -38,7 +38,7 @@ if (!file_exists("./assets/data/$user->username/kode.png")) {
                                 </div>
                                 <h2>Anda sudah mengisi formulir</h2>
                                 <p class="lead">
-                                    Hasil cetakan akan berbentuk file .docx . Silahkan datang langsung (offline) ke SMA PGRI 1 Sidoarjo dengan membawa formulir yang sudah di print/cetak.
+                                    Silahkan datang langsung (offline) ke SMA PGRI 1 Sidoarjo dengan membawa formulir yang sudah di print/cetak.
                                 </p>
                                 <a href="<?php echo base_url('cetakformulir/proses') ?>" class="btn btn-success mt-4">Cetak Formulir</a>
                                 <a href="https://goo.gl/maps/jzAUssEBNW3NryFHA" target="_blank" class="mt-4 text-success">Peta Lokasi</a>

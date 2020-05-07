@@ -37,7 +37,7 @@
                             <div class="form-group row align-items-center">
                                 <label for="nama_ortu" class="form-control-label col-sm-3 text-md-right">Nama Orang Tua*</label>
                                 <div class="col-sm-6 col-md-9">
-                                    <input type="text" name="nama_ortu" class="form-control" id="nama_ortu" required>
+                                    <input type="text" name="nama_ortu" class="form-control" id="nama_ortu" value="<?php echo set_value('nama_ortu'); ?>" required>
                                     <?php echo form_error('nama_ortu', '<small class="text-danger pl-3">', '</small>'); ?>
                                 </div>
                             </div>
@@ -45,7 +45,7 @@
                             <div class="form-group row align-items-center">
                                 <label for="pekerjaan" class="form-control-label col-sm-3 text-md-right">Pekerjaan*</label>
                                 <div class="col-sm-6 col-md-9">
-                                    <input type="text" name="pekerjaan" class="form-control" id="pekerjaan" required>
+                                    <input type="text" name="pekerjaan" class="form-control" id="pekerjaan" value="<?php echo set_value('pekerjaan'); ?>" required>
                                     <?php echo form_error('pekerjaan', '<small class="text-danger pl-3">', '</small>'); ?>
                                 </div>
                             </div>
@@ -61,7 +61,7 @@
                             <div class="form-group row align-items-center">
                                 <label for="telp_ortu" class="form-control-label col-sm-3 text-md-right">Telp. Orang Tua*</label>
                                 <div class="col-sm-6 col-md-9">
-                                    <input type="number" name="telp_ortu" class="form-control" id="telp_ortu" required>
+                                    <input type="number" name="telp_ortu" class="form-control" id="telp_ortu" value="<?php echo set_value('telp_ortu'); ?>" required>
                                     <?php echo form_error('telp_ortu', '<small class="text-danger pl-3">', '</small>'); ?>
                                 </div>
                             </div>

@@ -3,6 +3,20 @@ UPDATE NOTE
 *******************
 
 *******************
+Version 0.2.4 (Release) 07 Mei 2020
+*******************
+* Perubahan pada database, silahkan import kembali.
+* Menambahkan custom config "foto.php"
+* Sekarang pemberkasan yang berhubungan dengan foto dapat diatur pada file application/config/foto.php
+* (revisi user)Nomor ijasah dihapus pada formulir
+* (revisi user)Nilai UN diganti nilai Mapel pada formulir
+* (revisi user)Foto ijasah diganti foto skl/ijasah pada formulir
+* (revisi user)max upload 10 Mb pada formulir
+* (revisi user)Background login dapat diganti
+* Perubahan format pada file formulir.docx
+* Optimalisasi pada website.
+
+*******************
 Version 0.2.3 (Release) 02 Mei 2020
 *******************
 * Perubahan pada database, silahkan import kembali.

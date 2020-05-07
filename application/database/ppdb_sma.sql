@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: May 01, 2020 at 12:50 AM
+-- Generation Time: May 07, 2020 at 05:08 AM
 -- Server version: 5.7.24
 -- PHP Version: 7.4.5
 
@@ -69,8 +69,7 @@ CREATE TABLE `data_diri_sekolah` (
   `id_user` int(11) NOT NULL,
   `asal_sekolah` varchar(40) NOT NULL,
   `nisn` varchar(14) NOT NULL,
-  `tahun_lulus` year(4) NOT NULL,
-  `no_ijasah` varchar(40) NOT NULL
+  `tahun_lulus` year(4) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
@@ -111,6 +110,7 @@ CREATE TABLE `env_agenda` (
   `agenda` text NOT NULL,
   `tapel` varchar(10) NOT NULL,
   `foto_daftar_ulang` varchar(255) NOT NULL,
+  `foto_bg` varchar(255) NOT NULL,
   `aktif` int(1) NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
@@ -118,8 +118,8 @@ CREATE TABLE `env_agenda` (
 -- Dumping data for table `env_agenda`
 --
 
-INSERT INTO `env_agenda` (`env_agenda_id`, `agenda`, `tapel`, `foto_daftar_ulang`, `aktif`) VALUES
-(1, 'Gelombang 1 : \r\n29 April 2020 - 29 Mei 2020\r\n\r\nGelombang 2 : \r\n30 Mei 2020 -  30 Juni 2020', '2020/2021', 'admin_ppdb_2019.jpg', 1);
+INSERT INTO `env_agenda` (`env_agenda_id`, `agenda`, `tapel`, `foto_daftar_ulang`, `foto_bg`, `aktif`) VALUES
+(1, 'Gelombang 1 : \r\n29 April 2020 - 29 Mei 2020\r\n\r\nGelombang 2 : \r\n30 Mei 2020 -  30 Juni 2020', '2020/2021', 'admin_ppdb_2019.jpg', 'bg_login.jpg', 1);
 
 -- --------------------------------------------------------
 
@@ -185,7 +185,7 @@ CREATE TABLE `user` (
 --
 
 INSERT INTO `user` (`user_id`, `nama`, `username`, `password`, `image`, `level`, `is_active`, `date_created`) VALUES
-(1, 'admin', 'admin', '$2y$10$Q6WhX7NjGHD6Kt0kfb/GxOcNcoWMID8QyvxqYwuwMF7MIUoWhiqNy', 'admin/shipit.jpg', 1, 1, '2020-04-02 18:33:34');
+(1, 'admin', 'admin', '$2y$10$Q6WhX7NjGHD6Kt0kfb/GxOcNcoWMID8QyvxqYwuwMF7MIUoWhiqNy', 'admin/shipit.png', 1, 1, '2020-04-02 18:33:34');
 
 -- --------------------------------------------------------
 

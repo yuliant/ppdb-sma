@@ -37,13 +37,13 @@
                         <div class="row">
                             <div class="col-lg-7 d-none d-lg-block">
                                 <!-- change image here -->
-                                <img style="height: 400px" src="<?php echo base_url() ?>assets/data/bg_login.jpg">
+                                <img style="height: 400px; width: 560px" src="<?php echo base_url() ?>assets/data/<?php echo $env_agenda->foto_bg ?>">
                             </div>
                             <div class="col-lg-5">
                                 <div class="p-5">
                                     <div class="text-center">
-                                        <h4 class="h4 text-gray-900">Login</h4>
-                                        <p class="text-gray-900 mb-2">PPDB Smagrisda <?php echo $env_agenda->tapel ?></p>
+                                        <h4 class="h5 text-gray-900 mb-0">Selamat Datang</h4>
+                                        <h4 class="h6 text-gray-900 mb-4">PPDB Smagrisda <?php echo $env_agenda->tapel ?></h4>
                                     </div>
 
                                     <?php echo $this->session->flashdata('message'); ?>

@@ -10,6 +10,7 @@ class Edit_profile extends CI_Controller
         check_not_login();
         $this->load->library('form_validation');
         $this->load->model('user/Formulir_m', 'Formulir_m');
+        $this->load->config('foto');
     }
 
     public function index()
@@ -37,8 +38,8 @@ class Edit_profile extends CI_Controller
             $username = $data['user']->username;
 
             if ($upload_image) {
-                $config['allowed_types'] = 'gif|jpg|png|jpeg';
-                $config['max_size']      = '1048';
+                $config['allowed_types'] = $this->config->item('type_pp');
+                $config['max_size']      = $this->config->item('max_pp');
                 $config['upload_path'] = './assets/data/' . $username;
 
                 if (!is_dir('./assets/data/' . $username)) {
