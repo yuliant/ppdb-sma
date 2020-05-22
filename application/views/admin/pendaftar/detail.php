@@ -15,7 +15,9 @@
 
         <div class="col-12 col-sm-8 col-lg-8">
 
-            <i class="fas fa-back"></i> <a href="<?php echo base_url('pendaftar') ?>" class="btn btn-info mb-3">Cancel</a>
+            <a href="<?php echo base_url('pendaftar') ?>" class="btn btn-info mb-3">
+                <i class="fas fa-backward"></i> Cancel
+            </a>
 
             <div class="card">
                 <div class="card-body">

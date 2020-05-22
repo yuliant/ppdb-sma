@@ -10,51 +10,48 @@ class Showuser extends CI_Controller
         check_not_login();
         check_admin();
         $this->load->model('admin/Showuser_m', 'Showuser_m');
-        $this->load->model('admin/Pagination_m', 'Pagination_m');
+    }
+
+    function get_ajax()
+    {
+        $list = $this->Showuser_m->get_datatables();
+        $data = array();
+        $no = @$_POST['start'];
+        foreach ($list as $item) {
+            ++$no;
+            $row = array();
+            $row['no'] = $no . ".";
+            $row['nama'] = $item->is_active != 1 ?
+                '<div class="bg-danger"><a href="' . base_url('showuser/detail/') . $item->user_id . '"><p class="text-white">' . $item->nama . '</p></a></div>'
+                : '<a href="' . base_url('showuser/detail/') . $item->user_id . '">' . $item->nama . '</a>';
+
+            $row['username'] = $item->username;
+            $row['is_active'] = $item->is_active != 1 ? '<div class="badge badge-danger">Tidak aktif</div>' : '<div class="badge badge-success">Aktif</div>';
+
+            // add html for action
+            $row['action'] = '
+            <form action="' . base_url('showuser/deleteuser') . '" method="post">
+                <a href="' . base_url('showuser/detail/' . $item->user_id) . '" class="badge badge-info btn-xs">Baca</a>
+                <input type="hidden" name="user_id" value="' . $item->user_id . '">
+                <button onclick="return confirm(\'Apakah anda yakin menghapus data ini?\')"  class="btn btn-danger btn-sm ml-2 btn-xs" name="hapus" type="hapus"><i class="fa fa-trash"></i> Delete</button>
+            </form>';
+
+            $data[] = $row;
+        }
+        $output = array(
+            "draw" => @$_POST['draw'],
+            "recordsTotal" => $this->Showuser_m->count_all(),
+            "recordsFiltered" => $this->Showuser_m->count_filtered(),
+            "data" => $data,
+        );
+        // output to json format
+        echo json_encode($output);
     }
 
     public function index()
     {
         $data['tittle'] = "Semua User";
-
-        //load library pagination
-        $this->load->library('pagination');
-
-        //delete session from 'keywordUser'
-        $this->session->unset_userdata('keywordUser');
-
-        //ambil data searching
-        if ($this->input->post('submit')) {
-            $data['keyword'] = $this->input->post('keyword');
-            $this->session->set_userdata('keywordUser', $data['keyword']);
-        } else {
-            $data['keyword'] = $this->session->userdata('keywordUser');
-        }
-
-        //menghitung jumlah data yang dicari
-        $countAllResults = $this->Showuser_m->AllUser(
-            null,
-            null,
-            $data['keyword']
-        );
-
-        $config['total_rows'] = $countAllResults->num_rows();
-        $config['base_url'] = $this->Pagination_m->urlUser();
-        $data['total_rows'] = $config['total_rows'];
-        $config['per_page'] = $this->Pagination_m->perPage();
-
-        //initialize
-        $this->pagination->initialize($config);
-
-        //set data to show
-        $data['start'] = $this->uri->segment(3);
-        $data['user_row'] = $this->Showuser_m->AllUser(
-            $config['per_page'],
-            $data['start'],
-            $data['keyword']
-        );
-
-        $this->template->load('temp_dashboard', 'admin/showuser/index', $data);
+        $this->template->load('temp_dashboard', 'admin/showuser/datatable', $data);
     }
 
     public function detail($id)

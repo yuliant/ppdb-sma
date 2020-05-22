@@ -47,4 +47,10 @@ $template->setValue('tapel', $env_agenda->tapel);
 $template->setImage('image1.jpg', "assets/data/$user->username/kode.png");
 $template->saveAs('assets/data/' . $data_diri->username . '/FORMULIR ' . $data_diri->nama . '.docx');
 
-echo "<h2>Download data <a href='" . base_url('assets/data/') . $data_diri->username . '/' . '/FORMULIR ' . $data_diri->nama . '.docx' . "' target='_blank'>Disini</a>  |  <a href='" . base_url('cetakformulir') . "'>Kembali</a></h2>";
+if ($this->uri->segment(2) == 'prosescetak') {
+    echo "<h2>Download data <a href='" . base_url('assets/data/') . $data_diri->username . '/' . '/FORMULIR ' . $data_diri->nama . '.docx' .
+        "' target='_blank'>Disini</a>  |  <a href='" . base_url('showformulir/detail/') . $user->user_id . "'>Kembali</a></h2>";
+} else {
+    echo "<h2>Download data <a href='" . base_url('assets/data/') . $data_diri->username . '/' . '/FORMULIR ' . $data_diri->nama . '.docx' .
+        "' target='_blank'>Disini</a>  |  <a href='" . base_url('cetakformulir') . "'>Kembali</a></h2>";
+}

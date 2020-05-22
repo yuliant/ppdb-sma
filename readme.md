@@ -7,8 +7,8 @@ Catatan : anda dapat melihat catatan pembaruan repository [disini](https://githu
 ### Cara Install
 1. Silahkan clone atau download repository ini.
 2. Import database yang berada di `.\application\databases\ppdb_sma.sql` ke MySQL Database anda.
-3. Lakukan konfigurasi pada `.\application\config\config.php` untuk mengatur `$config['base_url']` dan `.\application\config\database.php` untuk mengatur database.
-4. Check apakah file .htaccess sudah ada atau tidak. Jika tidak ada,Tambahkan file .htaccess untuk bypass index.php .
+3. Lakukan konfigurasi pada `.\application\config\database.php` untuk mengatur database.
+4. (opsional)Check apakah file .htaccess sudah ada atau tidak. Jika tidak ada,Tambahkan file .htaccess untuk bypass index.php .
 5. Done, silahkan jalankan website.
 
 ### Fitur - Fitur
@@ -23,9 +23,8 @@ Catatan : anda dapat melihat catatan pembaruan repository [disini](https://githu
 
 ### Admin
 1. Login sebagai admin.
-2. Melihat dan memanagement user.
-3. Melihat dan memanagement pendaftar.
-4. Melihat dan memanagement formulir dari pendaftar.
+2. Read, Delete, dan change status data user.
+3. Read, dan konfirmasi bukti pendaftar.
+4. Read, dan download formulir dari pendaftar.
 5. Melihat dan memanagement pembayaran, agenda, dan kontak admin.
 6. Memanagement profile.
-7. Mendaftarkan user.

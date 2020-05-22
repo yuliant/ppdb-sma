@@ -14,8 +14,12 @@
         </div>
 
         <div class="col-12 col-sm-8 col-lg-8">
-
-            <i class="fas fa-back"></i> <a href="<?php echo base_url('showformulir') ?>" class="btn btn-info mb-3">Cancel</a>
+            <a href="<?php echo base_url('showformulir') ?>" class="btn btn-info mb-3">
+                <i class="fas fa-backward"></i> Cancel
+            </a>
+            <a href="<?php echo base_url('showformulir/prosescetak/') . $show->id_user ?>" class="btn btn-warning mb-3 ml-2">
+                <i class="fas fa-cloud-download-alt"></i> Download
+            </a>
 
             <div class="card">
                 <div class="card-body">

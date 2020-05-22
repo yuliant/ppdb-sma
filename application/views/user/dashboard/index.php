@@ -30,7 +30,9 @@
                 <div class="activities">
                     <div class="activity">
                         <div class="activity-icon bg-primary text-white shadow-primary">
-                            <i class="fas fa-dollar-sign"></i>
+                            <i>
+                                <b>1</b>
+                            </i>
                         </div>
                         <div class="activity-detail">
                             <span class="text-job text-primary">BAYAR FORMULIR</span>
@@ -43,7 +45,9 @@
                     </div>
                     <div class="activity">
                         <div class="activity-icon bg-primary text-white shadow-primary">
-                            <i class="far fa-user"></i>
+                            <i>
+                                <b>2</b>
+                            </i>
                         </div>
                         <div class="activity-detail">
                             <span class="text-job text-primary">DAFTAR</span>
@@ -52,7 +56,9 @@
                     </div>
                     <div class="activity">
                         <div class="activity-icon bg-primary text-white shadow-primary">
-                            <i class="far fa-file-alt"></i>
+                            <i>
+                                <b>3</b>
+                            </i>
                         </div>
                         <div class="activity-detail">
                             <span class="text-job text-primary">ISI FORMULIR</span>
@@ -61,7 +67,9 @@
                     </div>
                     <div class="activity">
                         <div class="activity-icon bg-primary text-white shadow-primary">
-                            <i class="fas fa-print"></i>
+                            <i>
+                                <b>4</b>
+                            </i>
                         </div>
                         <div class="activity-detail">
                             <span class="text-job text-primary">CETAK FORMULIR</span>
@@ -70,7 +78,9 @@
                     </div>
                     <div class="activity">
                         <div class="activity-icon bg-primary text-white shadow-primary">
-                            <i class="fas fa-walking"></i>
+                            <i>
+                                <b>5</b>
+                            </i>
                         </div>
                         <div class="activity-detail">
                             <span class="text-job text-primary">DAFTAR ULANG</span>

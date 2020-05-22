@@ -3,16 +3,24 @@ UPDATE NOTE
 *******************
 
 *******************
+Version 0.3.0 (Beta) 22 Mei 2020
+*******************
+* File config.php sekarang tidak perlu di setup saat pertama kali install
+* Admin sekarang bisa mencetak formulir pendaftaran dari user
+* Support datatable pada menu admin: semua user, pendaftar, dan semua formulir
+* Optimalisasi pada website
+
+*******************
 Version 0.2.4 (Release) 07 Mei 2020
 *******************
 * Perubahan pada database, silahkan import kembali.
 * Menambahkan custom config "foto.php"
 * Sekarang pemberkasan yang berhubungan dengan foto dapat diatur pada file application/config/foto.php
-* (revisi user)Nomor ijasah dihapus pada formulir
-* (revisi user)Nilai UN diganti nilai Mapel pada formulir
-* (revisi user)Foto ijasah diganti foto skl/ijasah pada formulir
-* (revisi user)max upload 10 Mb pada formulir
-* (revisi user)Background login dapat diganti
+* (revisi client smagrisda)Nomor ijasah dihapus pada formulir
+* (revisi client smagrisda)Nilai UN diganti nilai Mapel pada formulir
+* (revisi client smagrisda)Foto ijasah diganti foto skl/ijasah pada formulir
+* (revisi client smagrisda)max upload 10 Mb pada formulir
+* (revisi client smagrisda)Background login dapat diganti
 * Perubahan format pada file formulir.docx
 * Optimalisasi pada website.
 

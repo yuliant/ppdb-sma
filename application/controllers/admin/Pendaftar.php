@@ -11,51 +11,51 @@ class Pendaftar extends CI_Controller
         check_not_login();
         check_admin();
         $this->load->model('admin/Pendaftar_m', 'Pendaftar_m');
-        $this->load->model('admin/Pagination_m', 'Pagination_m');
+    }
+
+    function get_ajax()
+    {
+        $list = $this->Pendaftar_m->get_datatables();
+        $data = array();
+        $no = @$_POST['start'];
+
+        foreach ($list as $item) {
+            ++$no;
+            $row = array();
+            $row['no'] = $no . ".";
+
+            if ($item->status == 1) {
+                $row['nama'] = '<a href="' . base_url('pendaftar/detail/') . $item->id_user . '">' . $item->nama . '</a>';
+                $row['status'] = '<div class="badge badge-success">Dikonfirmasi</div>';
+            } elseif ($item->status == 2) {
+                $row['nama'] = '<div class="bg-danger"><a href="' . base_url('pendaftar/detail/') . $item->id_user . '"><p class="text-white">' . $item->nama . '</p></a></div>';
+                $row['status'] = '<div class="badge badge-danger">Ditolak</div>';
+            } else {
+                $row['nama'] = '<div class="bg-warning"><a href="' . base_url('pendaftar/detail/') . $item->id_user . '"><p class="text-white">' . $item->nama . '</p></a></div>';
+                $row['status'] = '<div class="badge badge-warning">Belum dikonfirmasi</div>';
+            }
+
+            $row['tgl_daftar'] = date("d-m-Y", strtotime($item->daftar_created));
+
+            // add html for action
+            $row['action'] = '<a href="' . base_url('pendaftar/detail/' . $item->id_user) . '" class="badge badge-info btn-xs">Baca</a>';
+
+            $data[] = $row;
+        }
+        $output = array(
+            "draw" => @$_POST['draw'],
+            "recordsTotal" => $this->Pendaftar_m->count_all(),
+            "recordsFiltered" => $this->Pendaftar_m->count_filtered(),
+            "data" => $data,
+        );
+        // output to json format
+        echo json_encode($output);
     }
 
     public function index()
     {
         $data['tittle'] = "Para Pendaftar";
-
-        //load library pagination
-        $this->load->library('pagination');
-
-        //delete session from 'keywordPendaftar'
-        $this->session->unset_userdata('keywordPendaftar');
-
-        //ambil data searching
-        if ($this->input->post('submit')) {
-            $data['keyword'] = $this->input->post('keyword');
-            $this->session->set_userdata('keywordPendaftar', $data['keyword']);
-        } else {
-            $data['keyword'] = $this->session->userdata('keywordPendaftar');
-        }
-
-        //menghitung jumlah data yang dicari
-        $countAllResults = $this->Pendaftar_m->AllUserDaftar(
-            null,
-            null,
-            $data['keyword']
-        );
-
-        $config['total_rows'] = $countAllResults->num_rows();
-        $config['base_url'] = $this->Pagination_m->urlPendaftar();
-        $data['total_rows'] = $config['total_rows'];
-        $config['per_page'] = $this->Pagination_m->perPage();
-
-        //initialize
-        $this->pagination->initialize($config);
-
-        //set data to show
-        $data['start'] = $this->uri->segment(3);
-        $data['pendaftar_row'] = $this->Pendaftar_m->AllUserDaftar(
-            $config['per_page'],
-            $data['start'],
-            $data['keyword']
-        );
-
-        $this->template->load('temp_dashboard', 'admin/pendaftar/index', $data);
+        $this->template->load('temp_dashboard', 'admin/pendaftar/datatable', $data);
     }
 
     public function detail($id)

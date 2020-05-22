@@ -14,6 +14,9 @@ $user = $this->fungsi->user_login();
     <link rel="stylesheet" href="<?php echo base_url(); ?>assets/stisla/modules/fontawesome/css/all.min.css">
 
     <!-- CSS Libraries -->
+    <link rel="stylesheet" href="<?php echo base_url(); ?>assets/stisla/modules/datatables/datatables.min.css">
+    <link rel="stylesheet" href="<?php echo base_url(); ?>assets/stisla/modules/datatables/DataTables-1.10.16/css/dataTables.bootstrap4.min.css">
+    <link rel="stylesheet" href="<?php echo base_url(); ?>assets/stisla/modules/datatables/Select-1.2.4/css/select.bootstrap4.min.css">
 
     <!-- Template CSS -->
     <link rel="stylesheet" href="<?php echo base_url(); ?>assets/stisla/css/style.css">
@@ -168,6 +171,8 @@ $user = $this->fungsi->user_login();
                 </aside>
             </div>
 
+            <script src="<?php echo base_url(); ?>assets/stisla/modules/jquery.min.js"></script>
+
             <!-- Main Content -->
             <div class="main-content">
                 <?php echo $contents ?>
@@ -185,9 +190,6 @@ $user = $this->fungsi->user_login();
     </div>
 
     <!-- General JS Scripts -->
-    <script src="<?php echo base_url(); ?>assets/stisla/modules/jquery.min.js"></script>
-    <!-- <script src="<?php echo base_url(); ?>assets/stisla/modules/popper.js"></script>
-    <script src="<?php echo base_url(); ?>assets/stisla/modules/tooltip.js"></script> -->
     <script src="<?php echo base_url(); ?>assets/stisla/modules/bootstrap/js/bootstrap.min.js"></script>
     <script src="<?php echo base_url(); ?>assets/stisla/modules/nicescroll/jquery.nicescroll.min.js"></script>
     <script src="<?php echo base_url(); ?>assets/stisla/modules/moment.min.js"></script>

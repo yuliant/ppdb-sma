@@ -31,7 +31,7 @@
             </div>
             <div class="col-lg-6">
                 <div class="card card-large-icons">
-                    <div class="card-icon bg-success text-white">
+                    <div class="card-icon bg-success text-dark">
                         <i class="far fa-file-alt"></i>
                     </div>
                     <div class="card-body">

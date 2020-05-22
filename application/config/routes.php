@@ -105,6 +105,7 @@ $route['showformulir/index'] = 'admin/showformulir/index';
 $route['showformulir/index/(:any)'] = 'admin/showformulir/index/$1';
 $route['showformulir/detail'] = 'admin/showformulir/detail/';
 $route['showformulir/detail/(:any)'] = 'admin/showformulir/detail/$1';
+$route['showformulir/prosescetak/(:any)'] = 'admin/showformulir/prosescetak/$1';
 //env
 $route['pembayaran'] = 'admin/env/pembayaran/index';
 $route['agenda'] = 'admin/env/agenda/index';
