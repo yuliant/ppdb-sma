@@ -28,3 +28,4 @@ Catatan : anda dapat melihat catatan pembaruan repository [disini](https://githu
 4. Read, dan download formulir dari pendaftar.
 5. Melihat dan memanagement pembayaran, agenda, dan kontak admin.
 6. Memanagement profile.
+6. Menscan/mengecek formulir pendaftar

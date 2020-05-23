@@ -89,6 +89,18 @@ $user = $this->fungsi->user_login();
                                     <i class="far fa-file-alt"></i> <span>Semua Formulir</span>
                                 </a>
                             </li>
+
+                            <li <?php
+                                if ($this->uri->segment(1) == 'scan' || $this->uri->segment(2) == 'scan') {
+                                    echo 'class="active"';
+                                } else {
+                                    echo '';
+                                } ?>>
+                                <a class="nav-link" href="<?php echo base_url('scan') ?>">
+                                    <i class="fas fa-qrcode"></i> <span>Scan Formulir</span>
+                                </a>
+                            </li>
+
                             <!-- end user menu -->
                         <?php } ?>
 

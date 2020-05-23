@@ -3,6 +3,14 @@ UPDATE NOTE
 *******************
 
 *******************
+Version 0.3.1 (Beta) 23 Mei 2020
+*******************
+* Menambahkan menu 'scan formulir' untuk mengecheck keaslian formulir.
+* Menambahkan footer berupa url website pada formulir.docx
+* Merubah tampilan menu dashboard admin.
+* Optimalisasi pada website
+
+*******************
 Version 0.3.0 (Beta) 22 Mei 2020
 *******************
 * File config.php sekarang tidak perlu di setup saat pertama kali install

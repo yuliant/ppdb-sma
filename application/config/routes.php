@@ -86,6 +86,8 @@ $route['changepass'] = 'utils/change_pass/index';
 //admin
 //dashboard
 $route['admindashboard'] = 'admin/dashboard/index';
+//scan
+$route['scan'] = 'admin/scan/index';
 //pendaftar
 $route['pendaftar'] = 'admin/pendaftar/index';
 $route['pendaftar/index'] = 'admin/pendaftar/index';

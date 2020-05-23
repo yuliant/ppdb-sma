@@ -43,6 +43,9 @@ $template->setValue('tanggal_dibuat', date("d-m-Y", strtotime($berkas->berkas_cr
 //keterangan tapel
 $template->setValue('tapel', $env_agenda->tapel);
 
+//keterangan tapel
+$template->setValue('url_page', $kode);
+
 //set image
 $template->setImage('image1.jpg', "assets/data/$user->username/kode.png");
 $template->saveAs('assets/data/' . $data_diri->username . '/FORMULIR ' . $data_diri->nama . '.docx');

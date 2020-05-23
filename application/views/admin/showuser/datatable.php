@@ -1,3 +1,8 @@
+<script src="<?php echo base_url(); ?>assets/stisla/modules/datatables/datatables.min.js"></script>
+<script src="<?php echo base_url(); ?>assets/stisla/modules/datatables/DataTables-1.10.16/js/dataTables.bootstrap4.min.js"></script>
+<script src="<?php echo base_url(); ?>assets/stisla/modules/datatables/Select-1.2.4/js/dataTables.select.min.js"></script>
+<script src="<?php echo base_url(); ?>assets/stisla/modules/jquery-ui/jquery-ui.min.js"></script>
+
 <section class="section">
     <div class="section-body">
 
@@ -88,8 +93,3 @@
         });
     })
 </script>
-
-<script src="<?php echo base_url(); ?>assets/stisla/modules/datatables/datatables.min.js"></script>
-<script src="<?php echo base_url(); ?>assets/stisla/modules/datatables/DataTables-1.10.16/js/dataTables.bootstrap4.min.js"></script>
-<script src="<?php echo base_url(); ?>assets/stisla/modules/datatables/Select-1.2.4/js/dataTables.select.min.js"></script>
-<script src="<?php echo base_url(); ?>assets/stisla/modules/jquery-ui/jquery-ui.min.js"></script>
