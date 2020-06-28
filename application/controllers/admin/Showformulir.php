@@ -69,7 +69,7 @@ class Showformulir extends CI_Controller
         $this->load->model('admin/env/Agenda_m', 'Agenda_m');
         $this->load->model('Show_m');
 
-        $data['user'] = $this->User_m->get($user_id)->row();;
+        $data['user'] = $this->User_m->get($user_id)->row();
         $id = $data['user']->user_id;
 
         $data['data_diri'] = $this->User_Formulir_m->getDataDiri($id)->row();

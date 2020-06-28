@@ -3,6 +3,11 @@ UPDATE NOTE
 *******************
 
 *******************
+Version 0.3.2 (rilis) 28 Juni 2020
+*******************
+* Implementasi fitur download formulir pendaftaran di sisi admin.
+
+*******************
 Version 0.3.1 (Beta) 23 Mei 2020
 *******************
 * Menambahkan menu 'scan formulir' untuk mengecheck keaslian formulir.
